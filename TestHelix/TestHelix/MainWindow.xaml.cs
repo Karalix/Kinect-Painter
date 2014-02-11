@@ -92,7 +92,7 @@ namespace TestHelix
                         drawBone(squelette, JointType.ShoulderRight, JointType.ElbowRight, Brushes.AliceBlue);
                         drawBone(squelette, JointType.ElbowRight, JointType.WristRight, Brushes.AliceBlue);
                         drawBone(squelette, JointType.WristRight, JointType.HandRight, Brushes.AliceBlue);
-
+                        /*
                         // Left Leg
                         drawBone(squelette, JointType.HipLeft, JointType.KneeLeft, Brushes.AliceBlue);
                         drawBone(squelette, JointType.KneeLeft, JointType.AnkleLeft, Brushes.AliceBlue);
@@ -101,8 +101,12 @@ namespace TestHelix
                         // Right Leg
                         drawBone(squelette, JointType.HipRight, JointType.KneeRight, Brushes.AliceBlue);
                         drawBone(squelette, JointType.KneeRight, JointType.AnkleRight, Brushes.AliceBlue);
-                        drawBone(squelette, JointType.AnkleRight, JointType.FootRight, Brushes.AliceBlue);
+                        drawBone(squelette, JointType.AnkleRight, JointType.FootRight, Brushes.AliceBlue);*/
+
+
+                        ViewPort.UpdateLayout();
                     }
+
                 }
             }
         }
