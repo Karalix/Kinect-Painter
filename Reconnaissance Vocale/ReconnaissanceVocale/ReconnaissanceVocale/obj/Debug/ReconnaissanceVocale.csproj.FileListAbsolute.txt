@@ -1,0 +1,13 @@
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\bin\Debug\ReconnaissanceVocale.exe.config
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.csprojResolveAssemblyReference.cache
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\MainWindow.baml
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\MainWindow.g.cs
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\App.g.cs
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale_MarkupCompile.cache
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.g.resources
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.Properties.Resources.resources
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.csproj.GenerateResource.Cache
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\bin\Debug\ReconnaissanceVocale.exe
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\bin\Debug\ReconnaissanceVocale.pdb
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.exe
+D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.pdb

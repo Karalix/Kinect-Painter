@@ -1,0 +1,87 @@
+﻿<!-- Grammaire pour les objets de notre application -->
+<grammar version="1.0" xml:lang="fr-FR" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+  <rule id="rootRule">
+    <one-of>
+      <item>
+        <!-- Dire "OBJET" pour lancer le dessin -->
+        <tag>OBJET</tag>
+        <one-of>
+          <item>
+            <!-- Sphere 3D -->
+            <tag>SPHERE</tag>
+            <one-of>
+              <item> sphere </item>
+            </one-of>
+          </item>
+          <item>
+            <!-- Pyramide 3D -->
+            <tag>PYRAMIDE</tag>
+            <one-of>
+              <item> pyramide </item>
+            </one-of>
+          </item>
+          <item>
+            <!-- Cube 3D -->
+            <tag>CUBE</tag>
+            <one-of>
+              <item> cube </item>
+            </one-of>
+          </item>
+        </one-of>
+        <!-- Redimensionnement -->
+        <tag>REDIMENSIONNEMENT</tag>
+        <one-of>
+          <item>
+            <!-- Manuel -->
+            <tag>MANUEL</tag>
+            <one-of>
+              <item> manuel </item>
+            </one-of>
+          </item>
+          <item>
+            <!-- Automatique -->
+            <tag>AUTOMATIQUE</tag>
+            <one-of>
+              <item> automatique </item>
+              <item> auto </item>
+            </one-of>
+          </item>
+        </one-of>
+        <!-- Rotation -->
+        <tag>ROTATION</tag>
+        <one-of>
+          <item>
+            <!-- Nord -->
+            <tag>NORD</tag>
+            <one-of>
+              <item> nord </item>
+            </one-of>
+          </item>
+          <item>
+            <!-- SUD -->
+            <tag>SUD</tag>
+            <one-of>
+              <item> sud </item>
+            </one-of>
+          </item>
+          <item>
+            <!-- Est -->
+            <tag>EST</tag>
+            <one-of>
+              <item> est </item>
+              <item> east </item>
+              <item> este </item>
+            </one-of>
+          </item>
+          <item>
+            <!-- Ouest -->
+            <tag>OUEST</tag>
+            <one-of>
+              <item> ouest </item>
+            </one-of>
+          </item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+</grammar>

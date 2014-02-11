@@ -1,0 +1,35 @@
+﻿<!-- Grammaire pour le dessin de notre application -->
+<grammar version="1.0" xml:lang="fr-FR" root="rootRule" tag-format="semantics/1.0-literals" xmlns="http://www.w3.org/2001/06/grammar">
+  <rule id="rootRule">
+    <one-of>
+      <item>
+        <!-- Dire "DESSIN" pour lancer le dessin -->
+        <tag>DESSIN</tag> 
+        <one-of>
+          <item>
+            <!-- Brosse -->
+            <tag>BROSSE</tag>
+            <one-of>
+              <item> brosse </item>
+              <item> defaut </item>
+            </one-of>
+          </item>
+          <item>
+            <!-- Pinceau -->
+            <tag>PINCEAU</tag>
+            <one-of>
+              <item> pinceau </item>
+            </one-of>
+          </item>
+          <item>
+            <!-- Crayon -->
+            <tag>CRAYON</tag>
+            <one-of>
+              <item> crayon </item>
+            </one-of>
+          </item>
+        </one-of>
+      </item>
+    </one-of>
+  </rule>
+</grammar>
