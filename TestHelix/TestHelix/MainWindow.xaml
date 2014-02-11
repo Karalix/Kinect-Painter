@@ -1,0 +1,19 @@
+﻿<Window x:Class="TestHelix.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:HelixToolkit="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <HelixToolkit:HelixViewport3D Grid.Column="1" Background="Gray" x:Name="ViewPort">
+
+            <HelixToolkit:GridLinesVisual3D Width="8" Length="8" MinorDistance="1" MajorDistance="1" Thickness="0.01" x:Name="Grid"/>
+
+        </HelixToolkit:HelixViewport3D>
+        
+    </Grid>
+</Window>
