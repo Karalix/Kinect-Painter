@@ -228,7 +228,7 @@ namespace ReconnaissanceVocale
                         CrayonSpan.FontWeight = FontWeights.Bold;
 
                         // method for crayon
-                        //
+                        // 
                         //
                         //
                            
@@ -239,6 +239,105 @@ namespace ReconnaissanceVocale
                         PinceauSpan.FontWeight = FontWeights.Bold;
 
                         // method for pinceau
+                        //
+                        //
+                        //
+
+                        break;
+
+                    case "SPHERE":
+                        SphereSpan.Foreground = Brushes.Green;
+                        SphereSpan.FontWeight = FontWeights.Bold;
+
+                        // method for sphere
+                        //
+                        //
+                        //
+
+                        break;
+
+                    case "CUBE":
+                        CubeSpan.Foreground = Brushes.Green;
+                        CubeSpan.FontWeight = FontWeights.Bold;
+
+                        // method for cube
+                        //
+                        //
+                        //
+
+                        break;
+
+                    case "PYRAMIDE":
+                        PyramideSpan.Foreground = Brushes.Green;
+                        PyramideSpan.FontWeight = FontWeights.Bold;
+
+                        // method for pyramide
+                        //
+                        //
+                        //
+
+                        break;
+
+                    case "MANUEL":
+                        ManuelSpan.Foreground = Brushes.Green;
+                        ManuelSpan.FontWeight = FontWeights.Bold;
+
+                        // method for manuel
+                        //
+                        //
+                        //
+
+                        break;
+
+                    case "AUTOMATIQUE":
+                        AutoSpan.Foreground = Brushes.Green;
+                        AutoSpan.FontWeight = FontWeights.Bold;
+
+                        // method for automatique
+                        //
+                        //
+                        //
+
+                        break;
+
+                    case "NORD":
+                        NordSpan.Foreground = Brushes.Green;
+                        NordSpan.FontWeight = FontWeights.Bold;
+
+                        // method for nord
+                        //
+                        //
+                        //
+
+                        break;
+
+                    case "SUD":
+                        SudSpan.Foreground = Brushes.Green;
+                        SudSpan.FontWeight = FontWeights.Bold;
+
+                        // method for sud
+                        //
+                        //
+                        //
+
+                        break;
+
+                    case "OUEST":
+                        OuestSpan.Foreground = Brushes.Green;
+                        OuestSpan.FontWeight = FontWeights.Bold;
+
+                        // method for ouest
+                        //
+                        //
+                        //
+
+                        break;
+
+                    case "EST":
+                        EstSpan.Foreground = Brushes.Green;
+                        EstSpan.FontWeight = FontWeights.Bold;
+
+                        // method for est
                         //
                         //
                         //
