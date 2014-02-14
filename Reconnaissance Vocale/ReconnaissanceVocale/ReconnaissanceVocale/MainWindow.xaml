@@ -26,14 +26,8 @@
         <Viewbox Grid.Row="1" Stretch="Uniform" Grid.RowSpan="2">
             <Canvas Name="playArea"  Width="600" Height="779"/>
         </Viewbox>
-        <TextBlock Name="BaseBlock" Visibility="Visible" Grid.Row="3" HorizontalAlignment="Center" FontSize="16" Margin="254,10,241,10" Foreground="{StaticResource MediumGreyBrush}" Width="207">
-            Say: "<Span Name="DessinSpan">Dessin</Span>", "<Span Name="ObjetSpan">Objet</Span>"
-        </TextBlock>
-        <TextBlock Name="DessinBlock" Visibility="Hidden"  Grid.Row="3" HorizontalAlignment="Center" FontSize="16" Margin="276,10,275,10" Foreground="{StaticResource MediumGreyBrush}" Width="151">
-            Say: "<Span Name="BrosseSpan">Brosse</Span>", "<Span Name="PinceauSpan">Pinceau</Span>", "<Span Name="CrayonSpan">Crayon</Span>"
-        </TextBlock>
-        <TextBlock Name="ObjetBlock" Visibility="Hidden"  Grid.Row="3" HorizontalAlignment="Center" FontSize="16" Margin="65,9,62,11" Foreground="{StaticResource MediumGreyBrush}" Width="575">
-            Say: "<Span Name="SphereSpan">Sphere</Span>", "<Span Name="PyramideSpan">Pyramide</Span>", "<Span Name="CubeSpan">Cube</Span>", "<Span Name="ManuelSpan">Manuel</Span>", "<Span Name="AutoSpan">Auto</Span>", "<Span Name="NordSpan">Nord</Span>", "<Span Name="SudSpan">Sud</Span>", "<Span Name="EstSpan">Est</Span>", "<Span Name="OuestSpan">Ouest</Span>"
+        <TextBlock Name="SpeechBlock" Visibility="visible"  Grid.Row="3" HorizontalAlignment="Center" FontSize="16" Margin="10,10,0,10" Foreground="{StaticResource MediumGreyBrush}" Width="692">
+            =><Span Name="BrosseSpan">Brosse</Span>, <Span Name="PinceauSpan">Pinceau</Span>, <Span Name="CrayonSpan">Crayon</Span>, <Span Name="SphereSpan">Sphere</Span>, <Span Name="PyramideSpan">Pyramide</Span>, <Span Name="CubeSpan">Cube</Span>, <Span Name="ManuelSpan">Manuel</Span>, <Span Name="AutoSpan">Auto</Span>, <Span Name="NordSpan">Nord</Span>, <Span Name="SudSpan">Sud</Span>, <Span Name="EstSpan">Est</Span>, <Span Name="OuestSpan">Ouest</Span>
         </TextBlock>
     </Grid>
 </Window>

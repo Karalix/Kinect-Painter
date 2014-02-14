@@ -107,16 +107,46 @@ namespace ReconnaissanceVocale
 
             if (null != ri)
             {
-                recognitionSpans = new List<Span> { DessinSpan, ObjetSpan };
+                recognitionSpans = new List<Span> { BrosseSpan, PinceauSpan, CrayonSpan, CubeSpan, SphereSpan, PyramideSpan, ManuelSpan, AutoSpan, NordSpan, SudSpan, EstSpan, OuestSpan };
 
                 this.speechEngine = new SpeechRecognitionEngine(ri.Id);
 
+
+                // Create a grammar programmaticaly without an xml file
+                var BaseGram = new Choices();
+
+                BaseGram.Add(new SemanticResultValue("brosse", "BROSSE"));
+                BaseGram.Add(new SemanticResultValue("defaut", "BROSSE"));
+                BaseGram.Add(new SemanticResultValue("pinceau", "PINCEAU"));
+                BaseGram.Add(new SemanticResultValue("crayon", "CRAYON"));
+                BaseGram.Add(new SemanticResultValue("sphere", "SPHERE"));
+                BaseGram.Add(new SemanticResultValue("pyramide", "PYRAMIDE"));
+                BaseGram.Add(new SemanticResultValue("cube", "CUBE"));
+                BaseGram.Add(new SemanticResultValue("manuel", "MANUEL"));
+                BaseGram.Add(new SemanticResultValue("automatique", "AUTOMATIQUE"));
+                BaseGram.Add(new SemanticResultValue("auto", "AUTOMATIQUE"));
+                BaseGram.Add(new SemanticResultValue("nord", "NORD"));
+                BaseGram.Add(new SemanticResultValue("sud", "SUD"));
+                BaseGram.Add(new SemanticResultValue("est", "EST"));
+                BaseGram.Add(new SemanticResultValue("este", "EST"));
+                BaseGram.Add(new SemanticResultValue("east", "EST"));
+                BaseGram.Add(new SemanticResultValue("ouest", "OUEST"));
+
+                var gb = new GrammarBuilder { Culture = ri.Culture };
+
+                gb.Append(BaseGram);
+
+                var g = new Grammar(gb);
+
+
                 // Create a grammar from grammar definition XML file.
-                using (var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(Properties.Resources.GrammarBase)))
+                /*using (var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(Properties.Resources.GrammarBase)))
                 {
                     var g = new Grammar(memoryStream);
                     speechEngine.LoadGrammar(g);
-                }
+                }*/
+
+                speechEngine.LoadGrammar(g);
 
                 speechEngine.SpeechRecognized += SpeechRecognized;
                 speechEngine.SpeechRecognitionRejected += SpeechRejected;
@@ -164,10 +194,6 @@ namespace ReconnaissanceVocale
                 span.Foreground = (Brush)this.Resources[MediumGreyBrushKey];
                 span.FontWeight = FontWeights.Normal;
             }
-
-            BaseBlock.Visibility = System.Windows.Visibility.Visible;
-            DessinBlock.Visibility = System.Windows.Visibility.Hidden;
-            ObjetBlock.Visibility = System.Windows.Visibility.Hidden;
         }
 
         /// <summary>
@@ -178,7 +204,7 @@ namespace ReconnaissanceVocale
         private void SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             // Speech utterance confidence below which we treat speech as if it hadn't been heard
-            const double ConfidenceThreshold = 0.3;
+            const double ConfidenceThreshold = 0.1;
 
             ClearRecognitionHighlights();
 
@@ -186,32 +212,36 @@ namespace ReconnaissanceVocale
             {
                 switch (e.Result.Semantics.Value.ToString())
                 {
-                    case "Dessin":
-                        DessinSpan.Foreground = Brushes.Green;
-                        DessinSpan.FontWeight = FontWeights.Bold;
+                    case "BROSSE":
+                        BrosseSpan.Foreground = Brushes.Green;
+                        BrosseSpan.FontWeight = FontWeights.Bold;
 
-                        //Launch GrammarDessin
-
-                        //changeSpeech(new SpeechRecognitionEngine(GetKinectRecognizer()));
-                        changeSpeech("Dessin");
-
-                        BaseBlock.Visibility = System.Windows.Visibility.Hidden;
-                        DessinBlock.Visibility = System.Windows.Visibility.Visible;
-
+                        // method for brosse
+                        //
+                        //
+                        //
 
                         break;
 
-                    case "Objet":
-                        ObjetSpan.Foreground = Brushes.Green;
-                        DessinSpan.FontWeight = FontWeights.Bold;
-                       
-                        //Launch GrammarObjet
+                    case "CRAYON":
+                        CrayonSpan.Foreground = Brushes.Green;
+                        CrayonSpan.FontWeight = FontWeights.Bold;
 
-                        //changeSpeech(new SpeechRecognitionEngine(GetKinectRecognizer()));
-                        changeSpeech("Objet");
+                        // method for crayon
+                        //
+                        //
+                        //
+                           
+                        break;
 
-                        BaseBlock.Visibility = System.Windows.Visibility.Hidden;
-                        ObjetBlock.Visibility = System.Windows.Visibility.Visible;
+                    case "PINCEAU":
+                        PinceauSpan.Foreground = Brushes.Green;
+                        PinceauSpan.FontWeight = FontWeights.Bold;
+
+                        // method for pinceau
+                        //
+                        //
+                        //
 
                         break;
                 }
@@ -226,62 +256,6 @@ namespace ReconnaissanceVocale
         private void SpeechRejected(object sender, SpeechRecognitionRejectedEventArgs e)
         {
             ClearRecognitionHighlights();
-        }
-
-        private void changeSpeech(string grammar)
-        {
-            ClearRecognitionHighlights();
-
-            RecognizerInfo ri = GetKinectRecognizer();
-
-            if(grammar == "DESSIN" && null != ri)
-            {
-                recognitionSpans = new List<Span> { BrosseSpan, PinceauSpan, CrayonSpan };
-
-                this.speechEngine = new SpeechRecognitionEngine(ri.Id);
-
-                // Create a grammar from grammar definition XML file.
-                using (var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(Properties.Resources.GrammarDessin)))
-                {
-                    var g = new Grammar(memoryStream);
-                    speechEngine.LoadGrammar(g);
-                }
-
-                speechEngine.SpeechRecognized += SpeechRecognized;
-                speechEngine.SpeechRecognitionRejected += SpeechRejected;
-
-                // For long recognition sessions (a few hours or more), it may be beneficial to turn off adaptation of the acoustic model. 
-                // This will prevent recognition accuracy from degrading over time.
-                ////speechEngine.UpdateRecognizerSetting("AdaptationOn", 0);
-
-                speechEngine.SetInputToAudioStream(
-                    sensor.AudioSource.Start(), new SpeechAudioFormatInfo(EncodingFormat.Pcm, 16000, 16, 1, 32000, 2, null));
-                speechEngine.RecognizeAsync(RecognizeMode.Multiple);
-            }
-            else if (grammar == "OBJET" && null != ri)
-            {
-                recognitionSpans = new List<Span> { SphereSpan, PyramideSpan, CubeSpan, ManuelSpan, AutoSpan, NordSpan, SudSpan, EstSpan, OuestSpan };
-
-                this.speechEngine = new SpeechRecognitionEngine(ri.Id);
-
-                // Create a grammar from grammar definition XML file.
-                using (var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(Properties.Resources.GrammarObjet)))
-                {
-                    var g = new Grammar(memoryStream);
-                    speechEngine.LoadGrammar(g);
-                }
-
-                speechEngine.SpeechRecognized += SpeechRecognized;
-                speechEngine.SpeechRecognitionRejected += SpeechRejected;
-
-                // For long recognition sessions (a few hours or more), it may be beneficial to turn off adaptation of the acoustic model. 
-                // This will prevent recognition accuracy from degrading over time.
-                ////speechEngine.UpdateRecognizerSetting("AdaptationOn", 0);
-
-                speechEngine.SetInputToAudioStream(
-                    sensor.AudioSource.Start(), new SpeechAudioFormatInfo(EncodingFormat.Pcm, 16000, 16, 1, 32000, 2, null));
-                speechEngine.RecognizeAsync(RecognizeMode.Multiple);
-            }
         }
     }
 }
