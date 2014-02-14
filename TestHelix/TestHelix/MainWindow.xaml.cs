@@ -22,6 +22,7 @@ namespace TestHelix
     {
         LinesVisual3D lignes = new LinesVisual3D();
         PointsVisual3D points = new PointsVisual3D();
+        LinesVisual3D arretes = new LinesVisual3D();
         private KinectSensor kinect = null;
         private Timer timer = new Timer();
         private Skeleton[] players = new Skeleton[2];
@@ -32,9 +33,12 @@ namespace TestHelix
 
             ViewPort.Children.Add(lignes);
             ViewPort.Children.Add(points);
+            ViewPort.Children.Add(arretes);
 
             points.Color = Brushes.Orange.Color;
             points.Size = 3;
+            arretes.Color = Brushes.Orange.Color;
+            points.Size = 2;
 
             initKinect();
         }
@@ -114,6 +118,8 @@ namespace TestHelix
 
                     }
 
+                    //ViewPort.Camera = ViewPort.Camera;
+
                 }
             }
         }
@@ -163,9 +169,22 @@ namespace TestHelix
                 if (skel != null)
                 {
                     Joint main = skel.Joints[JointType.HandRight];
-                    points.Points.Add(new Point3D(main.Position.X, main.Position.Y, main.Position.Z));
+                    Point3D newP = new Point3D(main.Position.X, main.Position.Y, main.Position.Z);
+                    if (points.Points.Count > 0)
+                    {
+                        arretes.Points.Add(points.Points.Last());
+                        arretes.Points.Add(newP);
+                    }
+                    points.Points.Add(newP);
+                    
                 }
             }
+        }
+
+        private void ClearSpace(object sender, RoutedEventArgs e)
+        {
+            points.Points.Clear();
+            arretes.Points.Clear();
         }
     }
 }
