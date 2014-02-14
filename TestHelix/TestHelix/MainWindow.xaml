@@ -9,11 +9,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <HelixToolkit:HelixViewport3D Background="Gray" x:Name="ViewPort" Grid.ColumnSpan="2" Height="386" VerticalAlignment="Top">
+        <HelixToolkit:HelixViewport3D Background="Gray" x:Name="ViewPort" Grid.ColumnSpan="2" Height="492" VerticalAlignment="Top" Margin="0,0,100,0">
 
             <HelixToolkit:GridLinesVisual3D Width="8" Length="8" MinorDistance="1" MajorDistance="1" Thickness="0.01" x:Name="Grid"/>
 
         </HelixToolkit:HelixViewport3D>
+        <CheckBox x:Name="checkDraw" Content="Dessiner" Grid.Column="1" HorizontalAlignment="Left" Margin="609,0,0,0" VerticalAlignment="Top" Width="100" Click="SetDraw"/>
 
     </Grid>
 </Window>

@@ -14,22 +14,27 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HelixToolkit.Wpf;
 using Microsoft.Kinect;
+using System.Windows.Forms;
 
 namespace TestHelix
 {
-    /// <summary>
-    /// Logique d'interaction pour MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         LinesVisual3D lignes = new LinesVisual3D();
-        private KinectSensor kinect = null; 
+        PointsVisual3D points = new PointsVisual3D();
+        private KinectSensor kinect = null;
+        private Timer timer = new Timer();
+        private Skeleton[] players = new Skeleton[2];
 
         public MainWindow()
         {
             InitializeComponent();
 
             ViewPort.Children.Add(lignes);
+            ViewPort.Children.Add(points);
+
+            points.Color = Brushes.Orange.Color;
+            points.Size = 3;
 
             initKinect();
         }
@@ -64,6 +69,7 @@ namespace TestHelix
 
                 if (skeletonFrame != null)
                 {
+                    int i = 0;
                     Skeleton[] squelettes = new Skeleton[skeletonFrame.SkeletonArrayLength];
                     skeletonFrame.CopySkeletonDataTo(squelettes);
 
@@ -73,6 +79,7 @@ namespace TestHelix
                         Skeleton squelette in
                             squelettes.Where(skel => skel.TrackingState == SkeletonTrackingState.Tracked))
                     {
+                        players[i] = squelette;
                         drawBone(squelette, JointType.Head, JointType.ShoulderCenter, Brushes.AliceBlue);
 
                         drawBone(squelette, JointType.ShoulderCenter, JointType.ShoulderLeft, Brushes.AliceBlue);
@@ -103,6 +110,7 @@ namespace TestHelix
                         drawBone(squelette, JointType.KneeRight, JointType.AnkleRight, Brushes.AliceBlue);
                         drawBone(squelette, JointType.AnkleRight, JointType.FootRight, Brushes.AliceBlue);
 
+                        ++i;
 
                     }
 
@@ -129,6 +137,35 @@ namespace TestHelix
             lignes.Points.Add(p2);
             lignes.Color = color;
             lignes.Thickness = thickness;
+        }
+
+
+        private void SetDraw(object sender, RoutedEventArgs e)
+        {
+            if (checkDraw.IsChecked.GetValueOrDefault())
+            {
+                timer.Tick += new EventHandler(drawPoints);
+                timer.Interval = 41;
+                timer.Start();
+            }
+
+            if (!checkDraw.IsChecked.GetValueOrDefault())
+            {
+                timer.Tick -= drawPoints;
+            }
+
+        }
+
+        private void drawPoints(object sender, EventArgs e)
+        {
+            foreach (Skeleton skel in players)
+            {
+                if (skel != null)
+                {
+                    Joint main = skel.Joints[JointType.HandRight];
+                    points.Points.Add(new Point3D(main.Position.X, main.Position.Y, main.Position.Z));
+                }
+            }
         }
     }
 }
