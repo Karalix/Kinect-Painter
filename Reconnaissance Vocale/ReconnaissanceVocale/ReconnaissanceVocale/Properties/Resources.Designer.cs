@@ -67,29 +67,5 @@ namespace ReconnaissanceVocale.Properties
                 resourceCulture = value;
             }
         }
-
-        internal static string GrammarBase
-        {
-            get
-            {
-                return ResourceManager.GetString("GrammarBase", resourceCulture);
-            }
-        }
-
-        internal static string GrammarDessin
-        {
-            get
-            {
-                return ResourceManager.GetString("GrammarDessin", resourceCulture);
-            }
-        }
-
-        internal static string GrammarObjet
-        {
-            get
-            {
-                return ResourceManager.GetString("GrammarObjet", resourceCulture);
-            }
-        }
     }
 }

@@ -11,3 +11,15 @@ D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\bin\Debug\Reconnai
 D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\bin\Debug\ReconnaissanceVocale.pdb
 D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.exe
 D:\Programmation\C#\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.pdb
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\Reconnaissance Vocale\ReconnaissanceVocale\ReconnaissanceVocale\bin\Debug\ReconnaissanceVocale.exe.config
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\Reconnaissance Vocale\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.exe
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\Reconnaissance Vocale\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.pdb
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\Reconnaissance Vocale\ReconnaissanceVocale\ReconnaissanceVocale\bin\Debug\ReconnaissanceVocale.exe
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\Reconnaissance Vocale\ReconnaissanceVocale\ReconnaissanceVocale\bin\Debug\ReconnaissanceVocale.pdb
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\Reconnaissance Vocale\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\MainWindow.baml
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\Reconnaissance Vocale\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\MainWindow.g.cs
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\Reconnaissance Vocale\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\App.g.cs
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\Reconnaissance Vocale\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale_MarkupCompile.cache
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\Reconnaissance Vocale\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.g.resources
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\Reconnaissance Vocale\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.Properties.Resources.resources
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\Reconnaissance Vocale\ReconnaissanceVocale\ReconnaissanceVocale\obj\Debug\ReconnaissanceVocale.csproj.GenerateResource.Cache
