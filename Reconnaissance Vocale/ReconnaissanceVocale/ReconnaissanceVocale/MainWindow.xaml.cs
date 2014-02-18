@@ -60,7 +60,7 @@ namespace ReconnaissanceVocale
             {
                 string value;
                 recognizer.AdditionalInfo.TryGetValue("Kinect", out value);
-                if ("True".Equals(value, StringComparison.OrdinalIgnoreCase) && "fr-FR".Equals(recognizer.Culture.Name, StringComparison.OrdinalIgnoreCase))
+                if ("True".Equals(value, StringComparison.OrdinalIgnoreCase) && ("fr-FR".Equals(recognizer.Culture.Name, StringComparison.OrdinalIgnoreCase) || "en-US".Equals(recognizer.Culture.Name, StringComparison.OrdinalIgnoreCase)))
                 {
                     return recognizer;
                 }
@@ -110,13 +110,14 @@ namespace ReconnaissanceVocale
                 recognitionSpans = new List<Span> { BrosseSpan, PinceauSpan, CrayonSpan, CubeSpan, SphereSpan, PyramideSpan, ManuelSpan, AutoSpan, NordSpan, SudSpan, EstSpan, OuestSpan };
 
                 this.speechEngine = new SpeechRecognitionEngine(ri.Id);
+                this.speechEngine.SetInputToDefaultAudioDevice();
 
 
                 // Create a grammar programmaticaly without an xml file
                 var BaseGram = new Choices();
 
                 BaseGram.Add(new SemanticResultValue("brosse", "BROSSE"));
-                BaseGram.Add(new SemanticResultValue("defaut", "BROSSE"));
+                BaseGram.Add(new SemanticResultValue("default", "BROSSE"));
                 BaseGram.Add(new SemanticResultValue("pinceau", "PINCEAU"));
                 BaseGram.Add(new SemanticResultValue("crayon", "CRAYON"));
                 BaseGram.Add(new SemanticResultValue("sphere", "SPHERE"));
@@ -204,7 +205,7 @@ namespace ReconnaissanceVocale
         private void SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             // Speech utterance confidence below which we treat speech as if it hadn't been heard
-            const double ConfidenceThreshold = 0.1;
+            const double ConfidenceThreshold = 0.3;
 
             ClearRecognitionHighlights();
 
@@ -212,9 +213,11 @@ namespace ReconnaissanceVocale
             {
                 switch (e.Result.Semantics.Value.ToString())
                 {
-                    case "BROSSE":
+                    case "BRUSH":
                         BrosseSpan.Foreground = Brushes.Green;
                         BrosseSpan.FontWeight = FontWeights.Bold;
+
+                        Console.WriteLine("Vous avez dit brosse ! ");
 
                         // method for brosse
                         //
