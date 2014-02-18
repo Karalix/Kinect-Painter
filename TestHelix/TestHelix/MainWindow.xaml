@@ -15,7 +15,8 @@
 
         </HelixToolkit:HelixViewport3D>
         <CheckBox x:Name="checkDraw" Content="Dessiner" Grid.Column="1" HorizontalAlignment="Left" Margin="609,0,0,0" VerticalAlignment="Top" Width="100" Click="SetDraw"/>
-        <Button x:Name="ButtonClear" Content="Clear" Grid.Column="1" HorizontalAlignment="Left" Margin="609,32,0,0" VerticalAlignment="Top" Width="100" Click="ClearSpace"/>
+        <Button x:Name="ButtonClear" Content="Clear" Grid.Column="1" HorizontalAlignment="Left" Margin="609,61,0,0" VerticalAlignment="Top" Width="100" Click="ClearSpace"/>
+        <Button x:Name="buttonCube" Content="Cube" Grid.Column="1" HorizontalAlignment="Left" Margin="609,41,0,0" VerticalAlignment="Top" Width="100" Click="buildCube"/>
 
     </Grid>
 </Window>

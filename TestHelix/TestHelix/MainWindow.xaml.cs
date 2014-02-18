@@ -23,6 +23,13 @@ namespace TestHelix
         LinesVisual3D lignes = new LinesVisual3D();
         PointsVisual3D points = new PointsVisual3D();
         LinesVisual3D arretes = new LinesVisual3D();
+        MeshVisual3D mv = new MeshVisual3D();
+
+        Point3DCollection bufSkel = new Point3DCollection();
+        Point3DCollection bufPoint = new Point3DCollection();
+        Point3DCollection bufArrete = new Point3DCollection();
+
+
         private KinectSensor kinect = null;
         private Timer timer = new Timer();
         private Skeleton[] players = new Skeleton[2];
@@ -34,6 +41,7 @@ namespace TestHelix
             ViewPort.Children.Add(lignes);
             ViewPort.Children.Add(points);
             ViewPort.Children.Add(arretes);
+            ViewPort.Children.Add(mv);
 
             points.Color = Brushes.Orange.Color;
             points.Size = 3;
@@ -77,7 +85,7 @@ namespace TestHelix
                     Skeleton[] squelettes = new Skeleton[skeletonFrame.SkeletonArrayLength];
                     skeletonFrame.CopySkeletonDataTo(squelettes);
 
-                    lignes.Points.Clear();
+                    bufSkel.Clear();
 
                     foreach (
                         Skeleton squelette in
@@ -119,6 +127,7 @@ namespace TestHelix
                     }
 
                     //ViewPort.Camera = ViewPort.Camera;
+                    lignes.Points = bufSkel;
 
                 }
             }
@@ -139,8 +148,8 @@ namespace TestHelix
 
         private void ajouterLigne(Point3D p1, Point3D p2, Color color, float thickness)
         {
-            lignes.Points.Add(p1);
-            lignes.Points.Add(p2);
+            bufSkel.Add(p1);
+            bufSkel.Add(p2);
             lignes.Color = color;
             lignes.Thickness = thickness;
         }
@@ -164,27 +173,60 @@ namespace TestHelix
 
         private void drawPoints(object sender, EventArgs e)
         {
-            foreach (Skeleton skel in players)
-            {
+            Skeleton skel = players[0];
                 if (skel != null)
                 {
                     Joint main = skel.Joints[JointType.HandRight];
                     Point3D newP = new Point3D(main.Position.X, main.Position.Y, main.Position.Z);
-                    if (points.Points.Count > 0)
+                    if( bufPoint.Count > 0)
                     {
-                        arretes.Points.Add(points.Points.Last());
-                        arretes.Points.Add(newP);
+                        bufArrete.Add(bufPoint.Last());
+                        bufArrete.Add(newP);
                     }
-                    points.Points.Add(newP);
+                    bufPoint.Add(newP);
                     
                 }
-            }
+                arretes.Points = bufArrete;
+                points.Points = bufPoint;
+            
         }
 
         private void ClearSpace(object sender, RoutedEventArgs e)
         {
-            points.Points.Clear();
-            arretes.Points.Clear();
+            bufPoint.Clear();
+            bufArrete.Clear();
         }
+
+
+        /**
+         * Ceci ne marche pas encore
+         * 
+         * Cette méthode créée un cube à la position de la main droite de l'utilisateur
+         * 
+         */
+        private void buildCube(object sender, RoutedEventArgs e)
+        {
+            Skeleton s = players[0];
+                if (s != null)
+                {
+                    Joint main = s.Joints[JointType.HandRight];
+                    Point3D newP = new Point3D(main.Position.X, main.Position.Y, main.Position.Z);
+                    MeshBuilder mb = new MeshBuilder();
+                    mb.AddBox(newP, 3, 3, 3);
+
+                    mv.Mesh = new Mesh3D();
+
+                    foreach (Point3D pd in mb.Positions)
+                    {
+                        
+                        mv.Mesh.Vertices.Add(pd);
+                        //Console.WriteLine(pd.ToString());
+                    }
+                
+
+            }
+        }
+
+       
     }
 }
