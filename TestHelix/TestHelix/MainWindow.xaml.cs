@@ -48,6 +48,7 @@ namespace TestHelix
             arretes.Color = Brushes.Orange.Color;
             points.Size = 2;
 
+
             initKinect();
         }
 
