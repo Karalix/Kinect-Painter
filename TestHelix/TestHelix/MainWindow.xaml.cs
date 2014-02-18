@@ -36,6 +36,7 @@ namespace TestHelix
             points.Color = Brushes.Orange.Color;
             points.Size = 3;
 
+
             initKinect();
         }
 

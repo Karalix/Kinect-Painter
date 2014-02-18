@@ -13,6 +13,7 @@ namespace ReconnaissanceVocale
     using Microsoft.Kinect;
     using System.Speech.AudioFormat;
     using System.Speech.Recognition;
+    using System.Speech.Recognition.SrgsGrammar;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -101,64 +102,71 @@ namespace ReconnaissanceVocale
                     // Some other application is streaming from the same Kinect sensor
                     this.sensor = null;
                 }
-            }
-
-            RecognizerInfo ri = GetKinectRecognizer();
-
-            if (null != ri)
-            {
-                recognitionSpans = new List<Span> { BrosseSpan, PinceauSpan, CrayonSpan, CubeSpan, SphereSpan, PyramideSpan, ManuelSpan, AutoSpan, NordSpan, SudSpan, EstSpan, OuestSpan };
-
-                this.speechEngine = new SpeechRecognitionEngine(ri.Id);
-                this.speechEngine.SetInputToDefaultAudioDevice();
 
 
-                // Create a grammar programmaticaly without an xml file
-                var BaseGram = new Choices();
+                RecognizerInfo ri = GetKinectRecognizer();
 
-                BaseGram.Add(new SemanticResultValue("brosse", "BROSSE"));
-                BaseGram.Add(new SemanticResultValue("default", "BROSSE"));
-                BaseGram.Add(new SemanticResultValue("pinceau", "PINCEAU"));
-                BaseGram.Add(new SemanticResultValue("crayon", "CRAYON"));
-                BaseGram.Add(new SemanticResultValue("sphere", "SPHERE"));
-                BaseGram.Add(new SemanticResultValue("pyramide", "PYRAMIDE"));
-                BaseGram.Add(new SemanticResultValue("cube", "CUBE"));
-                BaseGram.Add(new SemanticResultValue("manuel", "MANUEL"));
-                BaseGram.Add(new SemanticResultValue("automatique", "AUTOMATIQUE"));
-                BaseGram.Add(new SemanticResultValue("auto", "AUTOMATIQUE"));
-                BaseGram.Add(new SemanticResultValue("nord", "NORD"));
-                BaseGram.Add(new SemanticResultValue("sud", "SUD"));
-                BaseGram.Add(new SemanticResultValue("est", "EST"));
-                BaseGram.Add(new SemanticResultValue("este", "EST"));
-                BaseGram.Add(new SemanticResultValue("east", "EST"));
-                BaseGram.Add(new SemanticResultValue("ouest", "OUEST"));
-
-                var gb = new GrammarBuilder { Culture = ri.Culture };
-
-                gb.Append(BaseGram);
-
-                var g = new Grammar(gb);
-
-
-                // Create a grammar from grammar definition XML file.
-                /*using (var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(Properties.Resources.GrammarBase)))
+                if (null != ri)
                 {
-                    var g = new Grammar(memoryStream);
-                    speechEngine.LoadGrammar(g);
-                }*/
+                    recognitionSpans = new List<Span> { BrosseSpan, PinceauSpan, CrayonSpan, CubeSpan, SphereSpan, PyramideSpan, ManuelSpan, AutoSpan, NordSpan, SudSpan, EstSpan, OuestSpan };
 
-                speechEngine.LoadGrammar(g);
+                    this.speechEngine = new SpeechRecognitionEngine(ri.Id);
+                    this.speechEngine.SetInputToDefaultAudioDevice();
 
-                speechEngine.SpeechRecognized += SpeechRecognized;
-                speechEngine.SpeechRecognitionRejected += SpeechRejected;
 
-                // For long recognition sessions (a few hours or more), it may be beneficial to turn off adaptation of the acoustic model. 
-                // This will prevent recognition accuracy from degrading over time.
-                ////speechEngine.UpdateRecognizerSetting("AdaptationOn", 0);
+                    // Create a grammar programmaticaly without an xml file
+                    /*var BaseGram = new Choices();
 
-                speechEngine.SetInputToAudioStream(
-                    sensor.AudioSource.Start(), new SpeechAudioFormatInfo(EncodingFormat.Pcm, 16000, 16, 1, 32000, 2, null));
-                speechEngine.RecognizeAsync(RecognizeMode.Multiple);
+                    BaseGram.Add(new SemanticResultValue("brosse", "BROSSE"));
+                    BaseGram.Add(new SemanticResultValue("default", "BROSSE"));
+                    BaseGram.Add(new SemanticResultValue("pinceau", "PINCEAU"));
+                    BaseGram.Add(new SemanticResultValue("crayon", "CRAYON"));
+                    BaseGram.Add(new SemanticResultValue("sphere", "SPHERE"));
+                    BaseGram.Add(new SemanticResultValue("pyramide", "PYRAMIDE"));
+                    BaseGram.Add(new SemanticResultValue("cube", "CUBE"));
+                    BaseGram.Add(new SemanticResultValue("manuel", "MANUEL"));
+                    BaseGram.Add(new SemanticResultValue("automatique", "AUTOMATIQUE"));
+                    BaseGram.Add(new SemanticResultValue("auto", "AUTOMATIQUE"));
+                    BaseGram.Add(new SemanticResultValue("nord", "NORD"));
+                    BaseGram.Add(new SemanticResultValue("sud", "SUD"));
+                    BaseGram.Add(new SemanticResultValue("est", "EST"));
+                    BaseGram.Add(new SemanticResultValue("este", "EST"));
+                    BaseGram.Add(new SemanticResultValue("east", "EST"));
+                    BaseGram.Add(new SemanticResultValue("ouest", "OUEST"));
+
+                    var gb = new GrammarBuilder { Culture = ri.Culture };
+
+                    gb.Append(BaseGram);
+
+                    var g = new Grammar(gb);*/
+
+
+                   /* //Création d'un document de la norme SRGS à partir du fichier grxml
+                    SrgsDocument xmlGrammar = new SrgsDocument("GrammarBase.xml");
+                    //Création d'une grammaire depuis le fichier de grammaire
+                    Grammar grammar = new Grammar(xmlGrammar);
+
+                    speechEngine.LoadGrammar(grammar);*/
+
+                    using (var memoryStream = new MemoryStream(Encoding.ASCII.GetBytes(Properties.Resources.GrammarBase)))
+                    {
+                        var g = new Grammar(memoryStream);
+                        speechEngine.LoadGrammar(g);
+                    }
+
+                    speechEngine.SpeechRecognized += SpeechRecognized;
+                    speechEngine.SpeechRecognitionRejected += SpeechRejected;
+                    speechEngine.SpeechHypothesized += SpeechHypothesized;
+
+                    // For long recognition sessions (a few hours or more), it may be beneficial to turn off adaptation of the acoustic model. 
+                    // This will prevent recognition accuracy from degrading over time.
+                    ////speechEngine.UpdateRecognizerSetting("AdaptationOn", 0);
+
+                    speechEngine.SetInputToAudioStream(
+                        sensor.AudioSource.Start(), new SpeechAudioFormatInfo(EncodingFormat.Pcm, 16000, 16, 1, 32000, 2, null));
+                    speechEngine.RecognizeAsync(RecognizeMode.Multiple);
+                }
+
             }
         }
 
@@ -181,6 +189,7 @@ namespace ReconnaissanceVocale
             {
                 this.speechEngine.SpeechRecognized -= SpeechRecognized;
                 this.speechEngine.SpeechRecognitionRejected -= SpeechRejected;
+                this.speechEngine.SpeechHypothesized -= SpeechHypothesized;
                 this.speechEngine.RecognizeAsyncStop();
             }
         }
@@ -358,6 +367,16 @@ namespace ReconnaissanceVocale
         private void SpeechRejected(object sender, SpeechRecognitionRejectedEventArgs e)
         {
             ClearRecognitionHighlights();
+        }
+
+        // <summary>
+        /// Handler for in progress speech events.
+        /// </summary>
+        /// <param name="sender">object sending the event.</param>
+        /// <param name="e">event arguments.</param>
+        private void SpeechHypothesized(object sender, SpeechHypothesizedEventArgs e)
+        {
+
         }
     }
 }

@@ -1,0 +1,12 @@
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\ColorBasics-WPF\bin\Debug\ColorBasics-WPF.exe
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\ColorBasics-WPF\bin\Debug\ColorBasics-WPF.pdb
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\ColorBasics-WPF\obj\Debug\ColorBasics-WPF.csprojResolveAssemblyReference.cache
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\ColorBasics-WPF\obj\Debug\MainWindow.baml
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\ColorBasics-WPF\obj\Debug\MainWindow.g.cs
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\ColorBasics-WPF\obj\Debug\App.g.cs
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\ColorBasics-WPF\obj\Debug\ColorBasics-WPF_MarkupCompile.cache
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\ColorBasics-WPF\obj\Debug\ColorBasics-WPF.g.resources
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\ColorBasics-WPF\obj\Debug\Microsoft.Samples.Kinect.ColorBasics.Properties.Resources.resources
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\ColorBasics-WPF\obj\Debug\ColorBasics-WPF.csproj.GenerateResource.Cache
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\ColorBasics-WPF\obj\Debug\ColorBasics-WPF.exe
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\ColorBasics-WPF\obj\Debug\ColorBasics-WPF.pdb

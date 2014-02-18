@@ -67,5 +67,36 @@ namespace ReconnaissanceVocale.Properties
                 resourceCulture = value;
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to No ready Kinect found!.
+        /// </summary>
+        internal static string NoKinectReady
+        {
+            get
+            {
+                return ResourceManager.GetString("NoKinectReady", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Could not find Kinect speech recognizer. Please refer to the sample requirements..
+        /// </summary>
+        internal static string NoSpeechRecognizer
+        {
+            get
+            {
+                return ResourceManager.GetString("NoSpeechRecognizer", resourceCulture);
+            }
+        }
+
+        
+        internal static string GrammarBase
+        {
+            get
+            {
+                return ResourceManager.GetString("GrammarBase", resourceCulture);
+            }
+        }
     }
 }
