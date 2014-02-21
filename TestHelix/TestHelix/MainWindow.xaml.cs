@@ -46,7 +46,6 @@ namespace TestHelix
             points.Color = Brushes.Orange.Color;
             points.Size = 3;
             arretes.Color = Brushes.Orange.Color;
-            points.Size = 2;
 
 
             initKinect();
@@ -197,6 +196,20 @@ namespace TestHelix
             bufPoint.Clear();
             bufArrete.Clear();
         }
+
+        //changer la couleur des points et arretes
+        private void ChangeColor(Color color)
+        {
+            points.Color = color;
+            arretes.Color = color;
+        }
+
+        //changer la taille des points
+        private void changeSize(int size)
+        {
+            points.Size = size;
+        }
+
 
 
         /**
