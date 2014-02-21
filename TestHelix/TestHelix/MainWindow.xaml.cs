@@ -46,6 +46,7 @@ namespace TestHelix
             points.Color = Brushes.Orange.Color;
             points.Size = 3;
             arretes.Color = Brushes.Orange.Color;
+            arretes.Thickness = 2;
 
 
             initKinect();
@@ -208,6 +209,7 @@ namespace TestHelix
         private void changeSize(int size)
         {
             points.Size = size;
+            arretes.Thickness = size - 1;
         }
 
 
