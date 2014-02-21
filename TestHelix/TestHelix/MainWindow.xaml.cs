@@ -75,6 +75,7 @@ namespace TestHelix
             }
         }
 
+
         private void KinectOnSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs eventArgs)
         {
             using (SkeletonFrame skeletonFrame = eventArgs.OpenSkeletonFrame())
@@ -133,6 +134,8 @@ namespace TestHelix
                 }
             }
         }
+
+        
 
         private void drawBone(Skeleton squelette, JointType articulation1, JointType articulation2, SolidColorBrush color)
         {
@@ -242,6 +245,23 @@ namespace TestHelix
 
             }
         }
+
+
+        private void buildBrosse(object sender, RoutedEventArgs e)
+        {
+            changeSize(10);
+        }
+
+        private void buildCrayon(object sender, RoutedEventArgs e)
+        {
+            changeSize(3);
+        }
+
+        private void buildPinceau(object sender, RoutedEventArgs e)
+        {
+            changeSize(5);
+        }
+
 
        
     }

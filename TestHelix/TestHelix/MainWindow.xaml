@@ -17,6 +17,8 @@
         <CheckBox x:Name="checkDraw" Content="Dessiner" Grid.Column="1" HorizontalAlignment="Left" Margin="609,0,0,0" VerticalAlignment="Top" Width="100" Click="SetDraw"/>
         <Button x:Name="ButtonClear" Content="Clear" Grid.Column="1" HorizontalAlignment="Left" Margin="609,61,0,0" VerticalAlignment="Top" Width="100" Click="ClearSpace"/>
         <Button x:Name="buttonCube" Content="Cube" Grid.Column="1" HorizontalAlignment="Left" Margin="609,41,0,0" VerticalAlignment="Top" Width="100" Click="buildCube"/>
-
+        <Button x:Name="buttonBrosse" Content="Brosse" Grid.Column="1" HorizontalAlignment="Left" Margin="609,180,0,0" VerticalAlignment="Top" Width="100" Click="buildBrosse"/>
+        <Button x:Name="buttonCrayon" Content="Crayon" Grid.Column="1" HorizontalAlignment="Left" Margin="609,200,0,0" VerticalAlignment="Top" Width="100" Click="buildCrayon"/>
+        <Button x:Name="buttonPinceau" Content="Pinceau" Grid.Column="1" HorizontalAlignment="Left" Margin="609,220,0,0" VerticalAlignment="Top" Width="100" Click="buildPinceau"/>
     </Grid>
 </Window>
