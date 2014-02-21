@@ -40,8 +40,6 @@ C:\Users\Alix\Documents\C#\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\Test
 C:\Users\Alix\Documents\C#\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\TestHelix.csproj.GenerateResource.Cache
 C:\Users\Alix\Documents\C#\Kinect-Painter\TestHelix\TestHelix\bin\Debug\TestHelix.exe
 C:\Users\Alix\Documents\C#\Kinect-Painter\TestHelix\TestHelix\bin\Debug\TestHelix.pdb
-C:\Users\Alix\Documents\C#\Kinect-Painter\TestHelix\TestHelix\bin\Debug\HelixToolkit.Wpf.pdb
-C:\Users\Alix\Documents\C#\Kinect-Painter\TestHelix\TestHelix\bin\Debug\HelixToolkit.Wpf.xml
 C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\TestHelix.exe
 C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\TestHelix.pdb
 C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\bin\Debug\TestHelix.exe

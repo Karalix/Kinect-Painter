@@ -56,11 +56,18 @@ namespace TestHelix
         {
             if (KinectSensor.KinectSensors.Count > 0)
                 kinect = KinectSensor.KinectSensors[0];
+            try
+            {
+                kinect.SkeletonStream.Enable();
+                kinect.SkeletonFrameReady += KinectOnSkeletonFrameReady;
 
-            kinect.SkeletonStream.Enable();
-            kinect.SkeletonFrameReady += KinectOnSkeletonFrameReady;
-
-            kinect.Start();
+                kinect.Start();
+            }
+            catch
+            {
+                info.Content = "Pas de kinect connectée !";
+            }
+            
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -212,20 +219,31 @@ namespace TestHelix
                 {
                     Joint main = s.Joints[JointType.HandRight];
                     Point3D newP = new Point3D(main.Position.X, main.Position.Y, main.Position.Z);
-                    MeshBuilder mb = new MeshBuilder();
-                    mb.AddBox(newP, 3, 3, 3);
-
-                    mv.Mesh = new Mesh3D();
-
-                    foreach (Point3D pd in mb.Positions)
-                    {
-                        
-                        mv.Mesh.Vertices.Add(pd);
-                        //Console.WriteLine(pd.ToString());
-                    }
+                    
                 
 
             }
+        }
+
+        private void setCameraPerso(object sender, RoutedEventArgs e)
+        {
+            if (players[0] != null)
+            {
+                Joint cible = players[0].Joints[JointType.Spine];
+                Point3D positionCamera = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 3);
+                Vector3D directionCamera = new Vector3D();
+                //ViewPort.CameraController.CameraPosition = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 5);
+                ViewPort.Camera.Position = new Point3D(cible.Position.X,cible.Position.Y,cible.Position.Z+2);
+                ViewPort.Camera = new PerspectiveCamera(new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 3), new Vector3D(0, 0, -1), new Vector3D(0, 1, 0), 100);
+                //ViewPort.CameraController.CameraTarget = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z);
+
+
+            }
+        }
+
+        private void resetCam(object sender, RoutedEventArgs e)
+        {
+            ViewPort.ResetCamera();
         }
 
        
