@@ -17,9 +17,15 @@
         <CheckBox x:Name="checkDraw" Content="Dessiner" Grid.Column="1" HorizontalAlignment="Left" Margin="609,0,0,0" VerticalAlignment="Top" Width="100" Click="SetDraw"/>
         <Button x:Name="ButtonClear" Content="Effacer" Grid.Column="1" HorizontalAlignment="Left" Margin="609,61,0,0" VerticalAlignment="Top" Width="100" Click="ClearSpace"/>
         <Button x:Name="buttonCube" Content="Cube" Grid.Column="1" HorizontalAlignment="Left" Margin="609,41,0,0" VerticalAlignment="Top" Width="100" Click="buildCube"/>
+<<<<<<< HEAD
         <Button x:Name="setCamera" Content="Focus squelette" Grid.Column="1" HorizontalAlignment="Left" Margin="609,109,0,0" VerticalAlignment="Top" Width="100" Click="setCameraPerso"/>
         <Button x:Name="resetCamPerso" Content="Reset Camera" Grid.Column="1" HorizontalAlignment="Left" Margin="609,129,0,0" VerticalAlignment="Top" Width="100" Click="resetCam"/>
         <Label x:Name="info" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="609,466,0,0" VerticalAlignment="Top" Width="100"/>
 
+=======
+        <Button x:Name="buttonBrosse" Content="Brosse" Grid.Column="1" HorizontalAlignment="Left" Margin="609,180,0,0" VerticalAlignment="Top" Width="100" Click="buildBrosse"/>
+        <Button x:Name="buttonCrayon" Content="Crayon" Grid.Column="1" HorizontalAlignment="Left" Margin="609,200,0,0" VerticalAlignment="Top" Width="100" Click="buildCrayon"/>
+        <Button x:Name="buttonPinceau" Content="Pinceau" Grid.Column="1" HorizontalAlignment="Left" Margin="609,220,0,0" VerticalAlignment="Top" Width="100" Click="buildPinceau"/>
+>>>>>>> 1d018ff81e7dd2e2bb8e2bf2bebce5e94315027e
     </Grid>
 </Window>

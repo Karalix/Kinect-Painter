@@ -44,7 +44,6 @@ C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Deb
 C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\TestHelix.pdb
 C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\bin\Debug\TestHelix.exe
 C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\bin\Debug\TestHelix.pdb
-C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\TestHelix.csprojResolveAssemblyReference.cache
 C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\MainWindow.baml
 C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\MainWindow.g.cs
 C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\App.g.cs

@@ -46,7 +46,7 @@ namespace TestHelix
             points.Color = Brushes.Orange.Color;
             points.Size = 3;
             arretes.Color = Brushes.Orange.Color;
-            points.Size = 2;
+            arretes.Thickness = 2;
 
 
             initKinect();
@@ -81,6 +81,7 @@ namespace TestHelix
                     kinect.Stop();
             }
         }
+
 
         private void KinectOnSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs eventArgs)
         {
@@ -140,6 +141,8 @@ namespace TestHelix
                 }
             }
         }
+
+        
 
         private void drawBone(Skeleton squelette, JointType articulation1, JointType articulation2, SolidColorBrush color)
         {
@@ -205,6 +208,21 @@ namespace TestHelix
             bufArrete.Clear();
         }
 
+        //changer la couleur des points et arretes
+        private void ChangeColor(Color color)
+        {
+            points.Color = color;
+            arretes.Color = color;
+        }
+
+        //changer la taille des points
+        private void changeSize(int size)
+        {
+            points.Size = size;
+            arretes.Thickness = size - 1;
+        }
+
+
 
         /**
          * Ceci ne marche pas encore
@@ -241,11 +259,31 @@ namespace TestHelix
             }
         }
 
+<<<<<<< HEAD
         private void resetCam(object sender, RoutedEventArgs e)
         {
             ViewPort.ResetCamera();
         }
 
+=======
+
+        private void buildBrosse(object sender, RoutedEventArgs e)
+        {
+            changeSize(10);
+        }
+
+        private void buildCrayon(object sender, RoutedEventArgs e)
+        {
+            changeSize(3);
+        }
+
+        private void buildPinceau(object sender, RoutedEventArgs e)
+        {
+            changeSize(5);
+        }
+
+
+>>>>>>> 1d018ff81e7dd2e2bb8e2bf2bebce5e94315027e
        
     }
 }
