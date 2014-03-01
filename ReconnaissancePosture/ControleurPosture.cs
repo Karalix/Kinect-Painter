@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Microsoft.Samples.Kinect.ColorBasics
+namespace ReconnaissancePosture
 {
     class ControleurPosture
     {
@@ -29,14 +29,6 @@ namespace Microsoft.Samples.Kinect.ColorBasics
             this.sensor = sensor;
             this.maxSquelettes = maxSquelettes;
             postureActuellesParSquelette = new PostureAbstraite[maxSquelettes];
-        }
-
-        /// <summary>
-        /// Détruit cet objet.
-        /// </summary>
-        public ~ControleurPosture()
-        {
-            StopperReconnaissance();
         }
 
         /// <summary>

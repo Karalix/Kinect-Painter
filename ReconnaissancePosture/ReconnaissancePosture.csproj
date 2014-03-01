@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControleurPosture.cs" />
+    <Compile Include="POMainGaucheDansLeDos.cs" />
     <Compile Include="PostureAbstraite.cs" />
     <Compile Include="PostureChangéeEventArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
