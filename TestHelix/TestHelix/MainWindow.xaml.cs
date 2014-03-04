@@ -36,6 +36,10 @@ namespace TestHelix
         private Timer timer = new Timer();
         private Skeleton[] players = new Skeleton[2];
 
+        UserInfo[] userInfos = new UserInfo[InteractionFrame.UserInfoArrayLength];
+        InteractionStream interStream;
+        InteractionHandEventType last;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -59,20 +63,81 @@ namespace TestHelix
         {
             if (KinectSensor.KinectSensors.Count > 0)
                 kinect = KinectSensor.KinectSensors[0];
+            else
+            {
+                info.Content = "Pas de kinect connectée";
+            }
             try
             {
                 kinect.SkeletonStream.Enable();
+                kinect.DepthStream.Enable();
+
+                interStream = new InteractionStream(kinect, new DummyInteraction());
+
+                kinect.DepthFrameReady += KinectOnDepthFrameReady;
                 kinect.SkeletonFrameReady += KinectOnSkeletonFrameReady;
 
-                KinectRegion.AddHandPointerGripHandler(kinectRegion, kinectRegion_HandPointerGrip);
-
+                interStream.InteractionFrameReady += interStream_InteractionFrameReady;
+               
                 kinect.Start();
             }
-            catch
+            catch(Exception e)
             {
-                info.Content = "Pas de kinect connectée !";
+                throw e;
             }
             
+        }
+
+        private void interStream_InteractionFrameReady(object sender, InteractionFrameReadyEventArgs e)
+        {
+            using (InteractionFrame inf = e.OpenInteractionFrame())
+            {
+                if (inf == null)
+                {
+                    return;
+                }
+                inf.CopyInteractionDataTo(userInfos);
+            }
+
+            foreach (UserInfo ui in userInfos)
+            {
+                var hands = ui.HandPointers;
+                if (ui.SkeletonTrackingId == 0)
+                    continue;
+
+                foreach (InteractionHandPointer hand in hands)
+                {
+                    last = hand.HandEventType == InteractionHandEventType.None ? last : hand.HandEventType;
+                    if (last == InteractionHandEventType.Grip)
+                    {
+                        checkDraw.IsChecked = true;
+                    }
+                    else
+                    {
+                        checkDraw.IsChecked = false;
+                    }
+                }
+
+            }
+        }
+
+        private void KinectOnDepthFrameReady(object sender, DepthImageFrameReadyEventArgs e)
+        {
+            using (DepthImageFrame dif = e.OpenDepthImageFrame())
+            {
+                if (dif == null)
+                {
+                    return;
+                }
+                try
+                {
+                    interStream.ProcessDepth(dif.GetRawPixelData(), dif.Timestamp);
+                }
+                catch (InvalidOperationException)
+                {
+
+                }
+            }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -98,6 +163,14 @@ namespace TestHelix
                     int i = 0;
                     Skeleton[] squelettes = new Skeleton[skeletonFrame.SkeletonArrayLength];
                     skeletonFrame.CopySkeletonDataTo(squelettes);
+
+                    try
+                    {
+                        var accelerometerReading = kinect.AccelerometerGetCurrentReading();
+                        interStream.ProcessSkeleton(squelettes, accelerometerReading, skeletonFrame.Timestamp);
+                    }
+                    catch (InvalidOperationException)
+                    {}
 
                     bufSkel.Clear();
 
@@ -180,10 +253,7 @@ namespace TestHelix
                 timer.Start();
             }
 
-            if (!checkDraw.IsChecked.GetValueOrDefault())
-            {
-                timer.Tick -= drawPoints;
-            }
+            
 
         }
 
@@ -256,12 +326,9 @@ namespace TestHelix
                 Joint cible = players[0].Joints[JointType.Spine];
                 Point3D positionCamera = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 3);
                 ViewPort.Camera = new PerspectiveCamera(new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 3), new Vector3D(0, 0, -1), new Vector3D(0, 1, 0), 100);
-<<<<<<< HEAD
 
-
-=======
                 //ViewPort.CameraController.CameraTarget = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z);
->>>>>>> b9933e7d015733461076999f28aee4ff36562198
+
             }
         }
 
@@ -270,10 +337,6 @@ namespace TestHelix
             ViewPort.ResetCamera();
         }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> b9933e7d015733461076999f28aee4ff36562198
         private void buildBrosse(object sender, RoutedEventArgs e)
         {
             changeSize(0.03);
@@ -286,8 +349,8 @@ namespace TestHelix
 
         private void buildPinceau(object sender, RoutedEventArgs e)
         {
-<<<<<<< HEAD
-            changeSize(5);
+
+            changeSize(0.02);
         }
 
         private void kinectRegion_HandPointerGrip(object sender, Microsoft.Kinect.Toolkit.Controls.HandPointerEventArgs e)
@@ -304,10 +367,12 @@ namespace TestHelix
 
         }
 
-       
-=======
-            changeSize(0.02);
-        }       
->>>>>>> b9933e7d015733461076999f28aee4ff36562198
+        private void unsetDraw(object sender, RoutedEventArgs e)
+        {
+            if (!checkDraw.IsChecked.GetValueOrDefault())
+            {
+                timer.Tick -= drawPoints;
+            }
+        }
     }
 }

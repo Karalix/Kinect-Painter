@@ -4,33 +4,6 @@
         xmlns:k="http://schemas.microsoft.com/kinect/2013"
         xmlns:HelixToolkit="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
         Title="MainWindow" Height="523" Width="767" Closing="Window_Closing">
-<<<<<<< HEAD
-    <k:KinectRegion x:Name="kinectRegion">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50" />
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <HelixToolkit:HelixViewport3D Background="Gray" x:Name="ViewPort" Grid.ColumnSpan="2" Height="492" VerticalAlignment="Top" Margin="0,0,100,0">
-                <HelixToolkit:GridLinesVisual3D Width="8" Length="8" MinorDistance="1" MajorDistance="1" Thickness="0.01" x:Name="Grid"/>
-
-            </HelixToolkit:HelixViewport3D>
-
-
-            <CheckBox x:Name="checkDraw" Content="Dessiner" Grid.Column="1" HorizontalAlignment="Left" Margin="609,0,0,0" VerticalAlignment="Top" Width="100" Click="SetDraw"/>
-            <Button x:Name="ButtonClear" Content="Effacer" Grid.Column="1" HorizontalAlignment="Left" Margin="609,61,0,0" VerticalAlignment="Top" Width="100" Click="ClearSpace"/>
-            <Button x:Name="buttonCube" Content="Cube" Grid.Column="1" HorizontalAlignment="Left" Margin="609,41,0,0" VerticalAlignment="Top" Width="100" Click="buildCube"/>
-            <Button x:Name="setCamera" Content="Focus squelette" Grid.Column="1" HorizontalAlignment="Left" Margin="609,109,0,0" VerticalAlignment="Top" Width="100" Click="setCameraPerso"/>
-            <Button x:Name="resetCamPerso" Content="Reset Camera" Grid.Column="1" HorizontalAlignment="Left" Margin="609,129,0,0" VerticalAlignment="Top" Width="100" Click="resetCam"/>
-            <Label x:Name="info" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="609,466,0,0" VerticalAlignment="Top" Width="100"/>
-            <Button x:Name="buttonBrosse" Content="Brosse" Grid.Column="1" HorizontalAlignment="Left" Margin="609,180,0,0" VerticalAlignment="Top" Width="100" Click="buildBrosse"/>
-            <Button x:Name="buttonCrayon" Content="Crayon" Grid.Column="1" HorizontalAlignment="Left" Margin="609,200,0,0" VerticalAlignment="Top" Width="100" Click="buildCrayon"/>
-            <Button x:Name="buttonPinceau" Content="Pinceau" Grid.Column="1" HorizontalAlignment="Left" Margin="609,220,0,0" VerticalAlignment="Top" Width="100" Click="buildPinceau"/>
-        </Grid>
-    </k:KinectRegion>
-    
-=======
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -41,7 +14,7 @@
             </HelixToolkit:HelixViewport3D>
         </Viewbox>
         <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Top" Width="130" Margin="5">
-            <CheckBox x:Name="checkDraw" Content="Dessiner" Click="SetDraw"/>
+            <CheckBox x:Name="checkDraw" Content="Dessiner" Checked="SetDraw" Unchecked="unsetDraw"/>
             <Button x:Name="ButtonClear" Content="Effacer" Click="ClearSpace"/>
             <Button x:Name="buttonCube" Content="Cube" Click="buildCube"/>
             <Button x:Name="setCamera" Content="Focus squelette" Click="setCameraPerso"/>
@@ -52,5 +25,4 @@
             <Button x:Name="buttonPinceau" Content="Pinceau" Click="buildPinceau"/>
         </StackPanel>
     </Grid>
->>>>>>> b9933e7d015733461076999f28aee4ff36562198
 </Window>
