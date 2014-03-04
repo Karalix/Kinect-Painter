@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HelixToolkit.Wpf;
 using Microsoft.Kinect;
+using Microsoft.Kinect.Toolkit.Controls;
+using Microsoft.Kinect.Toolkit.Interaction;
 using System.Windows.Forms;
 
 namespace TestHelix
@@ -50,6 +52,7 @@ namespace TestHelix
 
 
             initKinect();
+
         }
 
         private void initKinect()
@@ -60,6 +63,8 @@ namespace TestHelix
             {
                 kinect.SkeletonStream.Enable();
                 kinect.SkeletonFrameReady += KinectOnSkeletonFrameReady;
+
+                KinectRegion.AddHandPointerGripHandler(kinectRegion, kinectRegion_HandPointerGrip);
 
                 kinect.Start();
             }
@@ -249,23 +254,17 @@ namespace TestHelix
             {
                 Joint cible = players[0].Joints[JointType.Spine];
                 Point3D positionCamera = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 3);
-                Vector3D directionCamera = new Vector3D();
-                //ViewPort.CameraController.CameraPosition = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 5);
-                ViewPort.Camera.Position = new Point3D(cible.Position.X,cible.Position.Y,cible.Position.Z+2);
                 ViewPort.Camera = new PerspectiveCamera(new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 3), new Vector3D(0, 0, -1), new Vector3D(0, 1, 0), 100);
-                //ViewPort.CameraController.CameraTarget = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z);
 
 
             }
         }
 
-<<<<<<< HEAD
         private void resetCam(object sender, RoutedEventArgs e)
         {
             ViewPort.ResetCamera();
         }
 
-=======
 
         private void buildBrosse(object sender, RoutedEventArgs e)
         {
@@ -282,8 +281,20 @@ namespace TestHelix
             changeSize(5);
         }
 
+        private void kinectRegion_HandPointerGrip(object sender, Microsoft.Kinect.Toolkit.Controls.HandPointerEventArgs e)
+        {
+                timer.Tick += new EventHandler(drawPoints);
+                timer.Interval = 41;
+                timer.Start();
+        }
 
->>>>>>> 1d018ff81e7dd2e2bb8e2bf2bebce5e94315027e
+        private void kinectRegion_HandPointerGripRelease(object sender, Microsoft.Kinect.Toolkit.Controls.HandPointerEventArgs e)
+        {
+            timer.Tick -= drawPoints;
+            timer.Stop();
+
+        }
+
        
     }
 }
