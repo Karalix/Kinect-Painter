@@ -4,9 +4,12 @@
         xmlns:HelixToolkit="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
         Title="MainWindow" Height="523" Width="767" Closing="Window_Closing">
     <Grid>
-        <Viewbox Grid.ColumnSpan="1" Stretch="Fill">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Viewbox Stretch="Fill">
             <HelixToolkit:HelixViewport3D Background="Gray" x:Name="ViewPort" ShowViewCube="False" >
-                <HelixToolkit:GridLinesVisual3D Width="8" Length="8" MinorDistance="1" MajorDistance="1" Thickness="0.01" x:Name="Grid"/>
+                <HelixToolkit:GridLinesVisual3D Width="10" Length="10" MinorDistance="1" MajorDistance="1" Thickness="0.01" x:Name="Grid"/>
             </HelixToolkit:HelixViewport3D>
         </Viewbox>
         <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Top" Width="130" Margin="5">

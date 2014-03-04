@@ -51,4 +51,3 @@ C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Deb
 C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\TestHelix.g.resources
 C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\TestHelix.Properties.Resources.resources
 C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\TestHelix.csproj.GenerateResource.Cache
-C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\TestHelix.csprojResolveAssemblyReference.cache

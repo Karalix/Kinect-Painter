@@ -44,9 +44,9 @@ namespace TestHelix
             ViewPort.Children.Add(mv);
 
             points.Color = Brushes.Orange.Color;
-            points.Size = 3;
+            points.Size = 0.01;
             arretes.Color = Brushes.Orange.Color;
-            arretes.Thickness = 2;
+            arretes.Thickness = 0.005;
 
 
             initKinect();
@@ -153,7 +153,7 @@ namespace TestHelix
                 return;
 
             ajouterLigne(new Point3D(art1.Position.X, art1.Position.Y, art1.Position.Z), 
-                new Point3D(art2.Position.X, art2.Position.Y, art2.Position.Z), color.Color, 3);
+                new Point3D(art2.Position.X, art2.Position.Y, art2.Position.Z), color.Color, 0.05f);
         }
 
 
@@ -216,10 +216,11 @@ namespace TestHelix
         }
 
         //changer la taille des points
-        private void changeSize(int size)
+        private void changeSize(double size)
         {
             points.Size = size;
-            arretes.Thickness = size - 1;
+            arretes.Thickness = size - 0.005;
+
         }
 
 
@@ -264,17 +265,17 @@ namespace TestHelix
 
         private void buildBrosse(object sender, RoutedEventArgs e)
         {
-            changeSize(10);
+            changeSize(0.03);
         }
 
         private void buildCrayon(object sender, RoutedEventArgs e)
         {
-            changeSize(3);
+            changeSize(0.01);
         }
 
         private void buildPinceau(object sender, RoutedEventArgs e)
         {
-            changeSize(5);
+            changeSize(0.02);
         }       
     }
 }
