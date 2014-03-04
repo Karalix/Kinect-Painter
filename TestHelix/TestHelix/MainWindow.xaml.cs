@@ -46,9 +46,9 @@ namespace TestHelix
             ViewPort.Children.Add(mv);
 
             points.Color = Brushes.Orange.Color;
-            points.Size = 3;
+            points.Size = 0.01;
             arretes.Color = Brushes.Orange.Color;
-            arretes.Thickness = 2;
+            arretes.Thickness = 0.005;
 
 
             initKinect();
@@ -158,7 +158,7 @@ namespace TestHelix
                 return;
 
             ajouterLigne(new Point3D(art1.Position.X, art1.Position.Y, art1.Position.Z), 
-                new Point3D(art2.Position.X, art2.Position.Y, art2.Position.Z), color.Color, 3);
+                new Point3D(art2.Position.X, art2.Position.Y, art2.Position.Z), color.Color, 0.05f);
         }
 
 
@@ -221,10 +221,11 @@ namespace TestHelix
         }
 
         //changer la taille des points
-        private void changeSize(int size)
+        private void changeSize(double size)
         {
             points.Size = size;
-            arretes.Thickness = size - 1;
+            arretes.Thickness = size - 0.005;
+
         }
 
 
@@ -255,8 +256,12 @@ namespace TestHelix
                 Joint cible = players[0].Joints[JointType.Spine];
                 Point3D positionCamera = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 3);
                 ViewPort.Camera = new PerspectiveCamera(new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 3), new Vector3D(0, 0, -1), new Vector3D(0, 1, 0), 100);
+<<<<<<< HEAD
 
 
+=======
+                //ViewPort.CameraController.CameraTarget = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z);
+>>>>>>> b9933e7d015733461076999f28aee4ff36562198
             }
         }
 
@@ -265,19 +270,23 @@ namespace TestHelix
             ViewPort.ResetCamera();
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b9933e7d015733461076999f28aee4ff36562198
         private void buildBrosse(object sender, RoutedEventArgs e)
         {
-            changeSize(10);
+            changeSize(0.03);
         }
 
         private void buildCrayon(object sender, RoutedEventArgs e)
         {
-            changeSize(3);
+            changeSize(0.01);
         }
 
         private void buildPinceau(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
             changeSize(5);
         }
 
@@ -296,5 +305,9 @@ namespace TestHelix
         }
 
        
+=======
+            changeSize(0.02);
+        }       
+>>>>>>> b9933e7d015733461076999f28aee4ff36562198
     }
 }

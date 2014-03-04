@@ -4,6 +4,7 @@
         xmlns:k="http://schemas.microsoft.com/kinect/2013"
         xmlns:HelixToolkit="clr-namespace:HelixToolkit.Wpf;assembly=HelixToolkit.Wpf"
         Title="MainWindow" Height="523" Width="767" Closing="Window_Closing">
+<<<<<<< HEAD
     <k:KinectRegion x:Name="kinectRegion">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -29,4 +30,27 @@
         </Grid>
     </k:KinectRegion>
     
+=======
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Viewbox Stretch="Fill">
+            <HelixToolkit:HelixViewport3D Background="Gray" x:Name="ViewPort" ShowViewCube="False" >
+                <HelixToolkit:GridLinesVisual3D Width="10" Length="10" MinorDistance="1" MajorDistance="1" Thickness="0.01" x:Name="Grid"/>
+            </HelixToolkit:HelixViewport3D>
+        </Viewbox>
+        <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Top" Width="130" Margin="5">
+            <CheckBox x:Name="checkDraw" Content="Dessiner" Click="SetDraw"/>
+            <Button x:Name="ButtonClear" Content="Effacer" Click="ClearSpace"/>
+            <Button x:Name="buttonCube" Content="Cube" Click="buildCube"/>
+            <Button x:Name="setCamera" Content="Focus squelette" Click="setCameraPerso"/>
+            <Button x:Name="resetCamPerso" Content="Reset Camera" Click="resetCam"/>
+            <Label x:Name="info" Content="" />
+            <Button x:Name="buttonBrosse" Content="Brosse" Click="buildBrosse"/>
+            <Button x:Name="buttonCrayon" Content="Crayon" Click="buildCrayon"/>
+            <Button x:Name="buttonPinceau" Content="Pinceau" Click="buildPinceau"/>
+        </StackPanel>
+    </Grid>
+>>>>>>> b9933e7d015733461076999f28aee4ff36562198
 </Window>
