@@ -254,18 +254,13 @@ namespace TestHelix
                 ViewPort.Camera.Position = new Point3D(cible.Position.X,cible.Position.Y,cible.Position.Z+2);
                 ViewPort.Camera = new PerspectiveCamera(new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 3), new Vector3D(0, 0, -1), new Vector3D(0, 1, 0), 100);
                 //ViewPort.CameraController.CameraTarget = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z);
-
-
             }
         }
 
-<<<<<<< HEAD
         private void resetCam(object sender, RoutedEventArgs e)
         {
             ViewPort.ResetCamera();
         }
-
-=======
 
         private void buildBrosse(object sender, RoutedEventArgs e)
         {
@@ -280,10 +275,6 @@ namespace TestHelix
         private void buildPinceau(object sender, RoutedEventArgs e)
         {
             changeSize(5);
-        }
-
-
->>>>>>> 1d018ff81e7dd2e2bb8e2bf2bebce5e94315027e
-       
+        }       
     }
 }
