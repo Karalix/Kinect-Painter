@@ -268,20 +268,14 @@ namespace TestHelix
             Skeleton skel = players[0];
                 if (skel != null)
                 {
-                    
-
                     Joint main = skel.Joints[JointType.HandRight];
                     Point3D newP = new Point3D(main.Position.X, main.Position.Y, main.Position.Z);
-                    /*
-                    if( bufPoint.Count > 0)
+                    
+                    if( tmpPoints.Points.Count > 0)
                     {
-                        bufArrete.Add(bufPoint.Last());
-                        bufArrete.Add(newP);
+                        tmpArrete.Points.Add(tmpPoints.Points.Last());
+                        tmpArrete.Points.Add(newP);
                     }
-                    bufPoint.Add(newP);*/
-
-
-                    tmpArrete.Points.Add(newP);
                     tmpPoints.Points.Add(newP);
                 }
             
@@ -327,8 +321,7 @@ namespace TestHelix
                     Joint main = s.Joints[JointType.HandRight];
                     Point3D newP = new Point3D(main.Position.X, main.Position.Y, main.Position.Z);
                     
-                
-
+                    
             }
         }
 
