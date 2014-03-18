@@ -39,7 +39,6 @@ namespace TestHelix
         Point3DCollection bufPoint = new Point3DCollection();
         Point3DCollection bufArrete = new Point3DCollection();
         */
-
         private KinectSensor kinect = null;
         private Timer timer = new Timer();
         private Skeleton[] players = new Skeleton[2];
@@ -85,7 +84,7 @@ namespace TestHelix
             }
             catch(Exception e)
             {
-                throw e;
+               // throw e;
             }
             
         }
@@ -114,9 +113,10 @@ namespace TestHelix
                     {
                         checkDraw.IsChecked = true;
                     }
-                    else
+                    else 
                     {
-                        checkDraw.IsChecked = false;
+                        if(checkDraw.IsChecked == true)
+                            checkDraw.IsChecked = false;
                     }
                 }
 
@@ -250,18 +250,17 @@ namespace TestHelix
 
                 tmpArrete = new LinesVisual3D();
                 tmpArrete.Color = Brushes.Orange.Color;
-                tmpArrete.Thickness = 0.005;
+                tmpArrete.Thickness = 0.01;
 
                 tmpPoints = new PointsVisual3D();
                 tmpPoints.Color = Brushes.Orange.Color;
-                tmpPoints.Size = 0.01;
+                tmpPoints.Size = 0.05;
 
                 listePoints.Add(tmpPoints);
                 listeLignes.Add(tmpArrete);
 
                 ViewPort.Children.Add(listeLignes.Last());
                 ViewPort.Children.Add(listePoints.Last());
-
                 nbTraits.Content = "Nombre de traits : " + listeLignes.Count;
 
                 timer.Tick += new EventHandler(drawPoints);
@@ -278,20 +277,14 @@ namespace TestHelix
             Skeleton skel = players[0];
                 if (skel != null)
                 {
-                    
-
                     Joint main = skel.Joints[JointType.HandRight];
                     Point3D newP = new Point3D(main.Position.X, main.Position.Y, main.Position.Z);
-                    /*
-                    if( bufPoint.Count > 0)
+                    
+                    if( tmpPoints.Points.Count > 0)
                     {
-                        bufArrete.Add(bufPoint.Last());
-                        bufArrete.Add(newP);
+                        tmpArrete.Points.Add(tmpPoints.Points.Last());
+                        tmpArrete.Points.Add(newP);
                     }
-                    bufPoint.Add(newP);*/
-
-
-                    tmpArrete.Points.Add(newP);
                     tmpPoints.Points.Add(newP);
                 }
             
@@ -316,7 +309,7 @@ namespace TestHelix
             try
             {
                 tmpPoints.Size = size;
-                tmpArrete.Thickness = size - 0.005;
+                tmpArrete.Thickness = size - 0.04;
             }
             catch
             {
@@ -337,8 +330,7 @@ namespace TestHelix
                     Joint main = s.Joints[JointType.HandRight];
                     Point3D newP = new Point3D(main.Position.X, main.Position.Y, main.Position.Z);
                     
-                
-
+                    
             }
         }
 
@@ -355,17 +347,17 @@ namespace TestHelix
 
         private void buildBrosse(object sender, RoutedEventArgs e)
         {
-            changeSize(0.03);
+            changeSize(0.10);
         }
 
         private void buildCrayon(object sender, RoutedEventArgs e)
         {
-            changeSize(0.01);
+            changeSize(0.05);
         }
 
         private void buildPinceau(object sender, RoutedEventArgs e)
         {
-            changeSize(0.02);
+            changeSize(0.08);
         }
 
         private void kinectRegion_HandPointerGrip(object sender, Microsoft.Kinect.Toolkit.Controls.HandPointerEventArgs e)
