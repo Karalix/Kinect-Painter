@@ -31,6 +31,9 @@ namespace TestHelix
 
         MeshVisual3D mv = new MeshVisual3D();
 
+        Squelette2PerspectiveCameraConverter squelette2CameraConverter;
+        Boolean focusSquelette;
+
         Point3DCollection bufSkel = new Point3DCollection();
         /*
         Point3DCollection bufPoint = new Point3DCollection();
@@ -51,6 +54,9 @@ namespace TestHelix
 
             ViewPort.Children.Add(lignes);
             ViewPort.Children.Add(mv);
+
+            squelette2CameraConverter = new Squelette2PerspectiveCameraConverter();
+            focusSquelette = false;
 
             initKinect();
         }
@@ -204,6 +210,9 @@ namespace TestHelix
                         drawBone(squelette, JointType.KneeRight, JointType.AnkleRight, Brushes.AliceBlue);
                         drawBone(squelette, JointType.AnkleRight, JointType.FootRight, Brushes.AliceBlue);
 
+                        if (focusSquelette)
+                            ViewPort.Camera = (PerspectiveCamera)squelette2CameraConverter.Convert(players[0], null, null, null);
+
                         ++i;
 
                     }
@@ -334,17 +343,9 @@ namespace TestHelix
         }
 
 
-        private void setCameraPerso(object sender, RoutedEventArgs e)
+        private void toggleFocusSquelette(object sender, RoutedEventArgs e)
         {
-            if (players[0] != null)
-            {
-                Joint cible = players[0].Joints[JointType.Spine];
-                Point3D positionCamera = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 3);
-                ViewPort.Camera = new PerspectiveCamera(new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z + 3), new Vector3D(0, 0, -1), new Vector3D(0, 1, 0), 100);
-
-                //ViewPort.CameraController.CameraTarget = new Point3D(cible.Position.X, cible.Position.Y, cible.Position.Z);
-
-            }
+            focusSquelette = !focusSquelette;
         }
 
         private void resetCam(object sender, RoutedEventArgs e)

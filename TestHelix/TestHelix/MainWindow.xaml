@@ -16,7 +16,7 @@
             <CheckBox x:Name="checkDraw" Content="Dessiner" Checked="SetDraw" Unchecked="unsetDraw"/>
             <Button x:Name="ButtonClear" Content="Effacer" Click="ClearSpace"/>
             <Button x:Name="buttonCube" Content="Cube" Click="buildCube"/>
-            <Button x:Name="setCamera" Content="Focus squelette" Click="setCameraPerso"/>
+            <Button x:Name="setCamera" Content="Focus squelette" Click="toggleFocusSquelette"/>
             <Button x:Name="resetCamPerso" Content="Reset Camera" Click="resetCam"/>
             <Label x:Name="info" Content="" />
             <Label x:Name="nbTraits" Content=""/>
