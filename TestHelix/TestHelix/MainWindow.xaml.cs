@@ -36,7 +36,6 @@ namespace TestHelix
         Point3DCollection bufPoint = new Point3DCollection();
         Point3DCollection bufArrete = new Point3DCollection();
         */
-        Boolean isDessin = false;
         private KinectSensor kinect = null;
         private Timer timer = new Timer();
         private Skeleton[] players = new Skeleton[2];
@@ -237,7 +236,6 @@ namespace TestHelix
 
         private void SetDraw(object sender, RoutedEventArgs e)
         {
-            isDessin = true;
             if (checkDraw.IsChecked.GetValueOrDefault())
             {
 
@@ -254,10 +252,9 @@ namespace TestHelix
 
                 ViewPort.Children.Add(listeLignes.Last());
                 ViewPort.Children.Add(listePoints.Last());
-                if (isDessin == true)
-                    nbTraits.Content = "Nombre de traits : " + listeLignes.Count;
+                nbTraits.Content = "Nombre de traits : " + listeLignes.Count;
 
-                    timer.Tick += new EventHandler(drawPoints);
+                timer.Tick += new EventHandler(drawPoints);
                 timer.Interval = 41;
                 timer.Start();
             }
@@ -388,7 +385,6 @@ namespace TestHelix
             if (!checkDraw.IsChecked.GetValueOrDefault())
             {
                 timer.Tick -= drawPoints;
-                isDessin = false;
             }
         }
     }
