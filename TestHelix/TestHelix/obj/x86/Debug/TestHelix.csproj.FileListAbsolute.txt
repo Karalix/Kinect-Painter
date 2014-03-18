@@ -54,3 +54,7 @@ C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Deb
 C:\Users\Alix\Documents\C#\Kinect-Painter\TestHelix\TestHelix\bin\Debug\Microsoft.Kinect.Toolkit.Controls.dll
 C:\Users\Alix\Documents\C#\Kinect-Painter\TestHelix\TestHelix\bin\Debug\Microsoft.Kinect.Toolkit.Interaction.dll
 C:\Users\Alix\Documents\C#\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\TestHelix_Content.g.cs
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\bin\Debug\Microsoft.Kinect.Toolkit.Controls.dll
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\bin\Debug\Microsoft.Kinect.Toolkit.Interaction.dll
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\TestHelix.csprojResolveAssemblyReference.cache
+C:\Users\Mathieu\Documents\GitHub\Kinect-Painter\TestHelix\TestHelix\obj\x86\Debug\TestHelix_Content.g.cs
