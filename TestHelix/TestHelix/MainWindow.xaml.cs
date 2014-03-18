@@ -23,14 +23,19 @@ namespace TestHelix
     public partial class MainWindow : Window
     {
         LinesVisual3D lignes = new LinesVisual3D();
-        PointsVisual3D points = new PointsVisual3D();
-        LinesVisual3D arretes = new LinesVisual3D();
+        PointsVisual3D tmpPoints;
+        LinesVisual3D tmpArrete;
+
+        List<PointsVisual3D> listePoints = new List<PointsVisual3D>();
+        List<LinesVisual3D> listeLignes = new List<LinesVisual3D>();
+
         MeshVisual3D mv = new MeshVisual3D();
 
         Point3DCollection bufSkel = new Point3DCollection();
+        /*
         Point3DCollection bufPoint = new Point3DCollection();
         Point3DCollection bufArrete = new Point3DCollection();
-
+        */
 
         private KinectSensor kinect = null;
         private Timer timer = new Timer();
@@ -45,18 +50,9 @@ namespace TestHelix
             InitializeComponent();
 
             ViewPort.Children.Add(lignes);
-            ViewPort.Children.Add(points);
-            ViewPort.Children.Add(arretes);
             ViewPort.Children.Add(mv);
 
-            points.Color = Brushes.Orange.Color;
-            points.Size = 0.01;
-            arretes.Color = Brushes.Orange.Color;
-            arretes.Thickness = 0.005;
-
-
             initKinect();
-
         }
 
         private void initKinect()
@@ -152,7 +148,6 @@ namespace TestHelix
             }
         }
 
-
         private void KinectOnSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs eventArgs)
         {
             using (SkeletonFrame skeletonFrame = eventArgs.OpenSkeletonFrame())
@@ -213,14 +208,11 @@ namespace TestHelix
 
                     }
 
-                    //ViewPort.Camera = ViewPort.Camera;
                     lignes.Points = bufSkel;
 
                 }
             }
         }
-
-        
 
         private void drawBone(Skeleton squelette, JointType articulation1, JointType articulation2, SolidColorBrush color)
         {
@@ -234,7 +226,6 @@ namespace TestHelix
                 new Point3D(art2.Position.X, art2.Position.Y, art2.Position.Z), color.Color, 0.05f);
         }
 
-
         private void ajouterLigne(Point3D p1, Point3D p2, Color color, float thickness)
         {
             bufSkel.Add(p1);
@@ -243,11 +234,27 @@ namespace TestHelix
             lignes.Thickness = thickness;
         }
 
-
         private void SetDraw(object sender, RoutedEventArgs e)
         {
             if (checkDraw.IsChecked.GetValueOrDefault())
             {
+
+                tmpArrete = new LinesVisual3D();
+                tmpArrete.Color = Brushes.Orange.Color;
+                tmpArrete.Thickness = 0.005;
+
+                tmpPoints = new PointsVisual3D();
+                tmpPoints.Color = Brushes.Orange.Color;
+                tmpPoints.Size = 0.01;
+
+                listePoints.Add(tmpPoints);
+                listeLignes.Add(tmpArrete);
+
+                ViewPort.Children.Add(listeLignes.Last());
+                ViewPort.Children.Add(listePoints.Last());
+
+                nbTraits.Content = "Nombre de traits : " + listeLignes.Count;
+
                 timer.Tick += new EventHandler(drawPoints);
                 timer.Interval = 41;
                 timer.Start();
@@ -262,43 +269,50 @@ namespace TestHelix
             Skeleton skel = players[0];
                 if (skel != null)
                 {
+                    
+
                     Joint main = skel.Joints[JointType.HandRight];
                     Point3D newP = new Point3D(main.Position.X, main.Position.Y, main.Position.Z);
+                    /*
                     if( bufPoint.Count > 0)
                     {
                         bufArrete.Add(bufPoint.Last());
                         bufArrete.Add(newP);
                     }
-                    bufPoint.Add(newP);
-                    
+                    bufPoint.Add(newP);*/
+
+
+                    tmpArrete.Points.Add(newP);
+                    tmpPoints.Points.Add(newP);
                 }
-                arretes.Points = bufArrete;
-                points.Points = bufPoint;
             
         }
 
         private void ClearSpace(object sender, RoutedEventArgs e)
         {
-            bufPoint.Clear();
-            bufArrete.Clear();
+            listeLignes.Clear();
+            listePoints.Clear();
         }
 
         //changer la couleur des points et arretes
         private void ChangeColor(Color color)
         {
-            points.Color = color;
-            arretes.Color = color;
+            tmpPoints.Color = color;
+            tmpArrete.Color = color;
         }
 
         //changer la taille des points
         private void changeSize(double size)
         {
-            points.Size = size;
-            arretes.Thickness = size - 0.005;
-
+            try
+            {
+                tmpPoints.Size = size;
+                tmpArrete.Thickness = size - 0.005;
+            }
+            catch
+            {
+            }
         }
-
-
 
         /**
          * Ceci ne marche pas encore
@@ -318,6 +332,7 @@ namespace TestHelix
 
             }
         }
+
 
         private void setCameraPerso(object sender, RoutedEventArgs e)
         {
@@ -349,7 +364,6 @@ namespace TestHelix
 
         private void buildPinceau(object sender, RoutedEventArgs e)
         {
-
             changeSize(0.02);
         }
 
