@@ -47,12 +47,18 @@ namespace TestHelix
         InteractionStream interStream;
         InteractionHandEventType last;
 
+        Brush colorBack = Brushes.Gray;
+        SolidColorBrush colorSkel = Brushes.AliceBlue;
+        Color colorLines = Brushes.Orange.Color;
+        Color colorPoints = Brushes.Orange.Color;
+
         public MainWindow()
         {
             InitializeComponent();
 
             ViewPort.Children.Add(lignes);
             ViewPort.Children.Add(mv);
+            ViewPort.Background = colorBack;
 
             squelette2CameraConverter = new Squelette2PerspectiveCameraConverter();
             focusSquelette = false;
@@ -180,35 +186,35 @@ namespace TestHelix
                             squelettes.Where(skel => skel.TrackingState == SkeletonTrackingState.Tracked))
                     {
                         players[i] = squelette;
-                        drawBone(squelette, JointType.Head, JointType.ShoulderCenter, Brushes.AliceBlue);
+                        drawBone(squelette, JointType.Head, JointType.ShoulderCenter, colorSkel);
 
-                        drawBone(squelette, JointType.ShoulderCenter, JointType.ShoulderLeft, Brushes.AliceBlue);
-                        drawBone(squelette, JointType.ShoulderCenter, JointType.ShoulderRight, Brushes.AliceBlue);
+                        drawBone(squelette, JointType.ShoulderCenter, JointType.ShoulderLeft, colorSkel);
+                        drawBone(squelette, JointType.ShoulderCenter, JointType.ShoulderRight, colorSkel);
 
-                        drawBone(squelette, JointType.ShoulderCenter, JointType.Spine, Brushes.AliceBlue);
+                        drawBone(squelette, JointType.ShoulderCenter, JointType.Spine, colorSkel);
 
-                        drawBone(squelette, JointType.Spine, JointType.HipCenter, Brushes.AliceBlue);
+                        drawBone(squelette, JointType.Spine, JointType.HipCenter, colorSkel);
 
-                        drawBone(squelette, JointType.HipCenter, JointType.HipLeft, Brushes.AliceBlue);
-                        drawBone(squelette, JointType.HipCenter, JointType.HipRight, Brushes.AliceBlue);
+                        drawBone(squelette, JointType.HipCenter, JointType.HipLeft, colorSkel);
+                        drawBone(squelette, JointType.HipCenter, JointType.HipRight, colorSkel);
 
-                        drawBone(squelette, JointType.ShoulderLeft, JointType.ElbowLeft, Brushes.AliceBlue);
-                        drawBone(squelette, JointType.ElbowLeft, JointType.WristLeft, Brushes.AliceBlue);
-                        drawBone(squelette, JointType.WristLeft, JointType.HandLeft, Brushes.AliceBlue);
+                        drawBone(squelette, JointType.ShoulderLeft, JointType.ElbowLeft, colorSkel);
+                        drawBone(squelette, JointType.ElbowLeft, JointType.WristLeft, colorSkel);
+                        drawBone(squelette, JointType.WristLeft, JointType.HandLeft, colorSkel);
 
-                        drawBone(squelette, JointType.ShoulderRight, JointType.ElbowRight, Brushes.AliceBlue);
-                        drawBone(squelette, JointType.ElbowRight, JointType.WristRight, Brushes.AliceBlue);
-                        drawBone(squelette, JointType.WristRight, JointType.HandRight, Brushes.AliceBlue);
+                        drawBone(squelette, JointType.ShoulderRight, JointType.ElbowRight, colorSkel);
+                        drawBone(squelette, JointType.ElbowRight, JointType.WristRight, colorSkel);
+                        drawBone(squelette, JointType.WristRight, JointType.HandRight, colorSkel);
                         
                         // Left Leg
-                        drawBone(squelette, JointType.HipLeft, JointType.KneeLeft, Brushes.AliceBlue);
-                        drawBone(squelette, JointType.KneeLeft, JointType.AnkleLeft, Brushes.AliceBlue);
-                        drawBone(squelette, JointType.AnkleLeft, JointType.FootLeft, Brushes.AliceBlue);
+                        drawBone(squelette, JointType.HipLeft, JointType.KneeLeft, colorSkel);
+                        drawBone(squelette, JointType.KneeLeft, JointType.AnkleLeft, colorSkel);
+                        drawBone(squelette, JointType.AnkleLeft, JointType.FootLeft, colorSkel);
 
                         // Right Leg
-                        drawBone(squelette, JointType.HipRight, JointType.KneeRight, Brushes.AliceBlue);
-                        drawBone(squelette, JointType.KneeRight, JointType.AnkleRight, Brushes.AliceBlue);
-                        drawBone(squelette, JointType.AnkleRight, JointType.FootRight, Brushes.AliceBlue);
+                        drawBone(squelette, JointType.HipRight, JointType.KneeRight, colorSkel);
+                        drawBone(squelette, JointType.KneeRight, JointType.AnkleRight, colorSkel);
+                        drawBone(squelette, JointType.AnkleRight, JointType.FootRight, colorSkel);
 
                         if (focusSquelette)
                             ViewPort.Camera = (PerspectiveCamera)squelette2CameraConverter.Convert(players[0], null, null, null);
@@ -249,11 +255,11 @@ namespace TestHelix
             {
 
                 tmpArrete = new LinesVisual3D();
-                tmpArrete.Color = Brushes.Orange.Color;
+                tmpArrete.Color = colorLines;
                 tmpArrete.Thickness = 0.01;
 
                 tmpPoints = new PointsVisual3D();
-                tmpPoints.Color = Brushes.Orange.Color;
+                tmpPoints.Color = colorPoints;
                 tmpPoints.Size = 0.05;
 
                 bufArrete = new Point3DCollection();
@@ -312,10 +318,9 @@ namespace TestHelix
         }
 
         //changer la couleur des points et arretes
-        private void ChangeColor(Color color)
+        private void ChangeBackColor()
         {
-            tmpPoints.Color = color;
-            tmpArrete.Color = color;
+            ViewPort.Background = colorBack;
         }
 
         //changer la taille des points
@@ -395,6 +400,31 @@ namespace TestHelix
             {
                 timer.Tick -= drawPoints;
             }
+        }
+
+        private void Constellation_Unchecked(object sender, RoutedEventArgs e)
+        {
+            colorBack = Brushes.Gray;
+            colorLines = Brushes.Orange.Color;
+            colorPoints = Brushes.Orange.Color;
+            colorSkel = Brushes.AliceBlue;
+            ChangeBackColor();
+            timer.Stop();
+            timer.Interval = 41;
+            timer.Start();
+        }
+
+        private void Constellation_Checked(object sender, RoutedEventArgs e)
+        {
+            colorBack = Brushes.Black;
+            colorLines = Brushes.AntiqueWhite.Color;
+            colorPoints = Brushes.AntiqueWhite.Color;
+            colorSkel = Brushes.Red;
+            ChangeBackColor();
+            timer.Stop();
+            timer.Interval = 750;
+            timer.Start();
+
         }
     }
 }

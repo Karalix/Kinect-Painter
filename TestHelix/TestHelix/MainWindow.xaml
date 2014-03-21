@@ -12,8 +12,9 @@
             <HelixToolkit:HelixViewport3D Background="Gray" x:Name="ViewPort" ShowViewCube="False" >
             </HelixToolkit:HelixViewport3D>
         </Viewbox>
-        <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Top" Width="130" Margin="5">
+        <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Top" Width="140" Margin="5">
             <CheckBox x:Name="checkDraw" Content="Dessiner" Checked="SetDraw" Unchecked="unsetDraw"/>
+            <CheckBox x:Name="Constellation" Content="Mode Constellation" Checked="Constellation_Checked" Unchecked="Constellation_Unchecked"/>
             <Button x:Name="ButtonClear" Content="Effacer" Click="ClearSpace"/>
             <Button x:Name="buttonCube" Content="Cube" Click="buildCube"/>
             <Button x:Name="setCamera" Content="Focus squelette" Click="toggleFocusSquelette"/>
