@@ -1,0 +1,1075 @@
+changeset:   208:a3d0060c7b63
+tag:         tip
+user:        objo
+date:        Fri Jan 24 22:31:55 2014 +0100
+summary:     ObjReader: fix material bug for groups [discussions:472489]
+
+changeset:   207:d1a26d65d351
+user:        objo
+date:        Tue Jan 21 21:24:32 2014 +0100
+summary:     Add build info
+
+changeset:   206:45027611c729
+user:        objo
+date:        Mon Jan 20 22:47:21 2014 +0100
+summary:     Update build info
+
+changeset:   205:23fbdb857f5b
+user:        objo
+date:        Mon Jan 20 22:30:33 2014 +0100
+summary:     Correct StyleCop errors in InterlacedView3D
+
+changeset:   204:bd40498651af
+user:        objo
+date:        Mon Jan 20 22:30:11 2014 +0100
+summary:     Update build scripts
+
+changeset:   203:72bc7830b14d
+user:        objo
+date:        Mon Jan 20 22:16:48 2014 +0100
+summary:     Add build info
+
+changeset:   202:367111c190c0
+parent:      199:2ebcc7037aae
+parent:      201:56db9d7a8c93
+user:        objo
+date:        Mon Jan 20 22:00:22 2014 +0100
+summary:     Merge
+
+changeset:   201:56db9d7a8c93
+user:        christophano@hotmail.com
+date:        Mon Jan 20 13:18:14 2014 +0000
+summary:     Performance changes
+
+changeset:   200:d9a173a5d85e
+parent:      197:1d5ae026e290
+user:        christophano
+date:        Fri Jan 17 11:49:04 2014 +0000
+summary:     Performance changes
+
+changeset:   199:2ebcc7037aae
+user:        objo <oystein.bjorke@gmail.com>
+date:        Fri Jan 17 00:08:37 2014 +0100
+summary:     Update ExampleBrowser NET 4.0 project
+
+changeset:   198:38c75c741160
+user:        objo <oystein.bjorke@gmail.com>
+date:        Thu Jan 16 23:37:12 2014 +0100
+summary:     Code cleanup for StyleCop
+
+changeset:   197:1d5ae026e290
+user:        christophano
+date:        Wed Jan 15 10:04:27 2014 +0000
+summary:     Added entries to example browser to show cutting planes applied to shapes with linear gradient (Surface Plot) and image (Earth).
+
+changeset:   196:892f2219411a
+user:        christophano
+date:        Mon Jan 13 13:53:33 2014 +0000
+summary:     changes to support texture coordinates when using cutting planes group
+
+changeset:   195:252ac635bdd9
+user:        objo <oystein.bjorke@gmail.com>
+date:        Fri Jan 10 07:19:20 2014 +0100
+summary:     Update NET 4.0 project
+
+changeset:   194:f8abea36db77
+user:        objo <oystein.bjorke@gmail.com>
+date:        Thu Jan 09 23:25:00 2014 +0100
+summary:     Update NET 4.0 project
+
+changeset:   193:f686c5419045
+user:        objo <oystein.bjorke@gmail.com>
+date:        Thu Jan 09 23:21:02 2014 +0100
+summary:     Add interlaced stereo effect and demo
+
+changeset:   192:6e5a0ad02ff0
+user:        objo <oystein.bjorke@gmail.com>
+date:        Thu Jan 09 23:19:26 2014 +0100
+summary:     BatchRender: removed unused references
+
+changeset:   191:351c317144d7
+user:        objo <oystein.bjorke@gmail.com>
+date:        Thu Jan 09 21:40:37 2014 +0100
+summary:     MeshBuilder: correct comment for AddRevolvedGeometry [issue:10013]
+
+changeset:   190:54e95d0e9097
+parent:      189:6a20a23801ee
+parent:      185:514ade86abe6
+user:        objo <oystein.bjorke@gmail.com>
+date:        Thu Jan 09 07:38:29 2014 +0100
+summary:     Merge
+
+changeset:   189:6a20a23801ee
+user:        objo
+date:        Sat Oct 26 21:33:58 2013 +0200
+summary:     HelixViewport3D: Removed TouchMode property
+
+changeset:   188:9399afdfdd36
+user:        objo
+date:        Sat Oct 26 20:37:19 2013 +0200
+summary:     ManipulatorDemo: changed colours
+
+changeset:   187:d1de63fbb05f
+user:        objo
+date:        Sat Oct 26 20:36:58 2013 +0200
+summary:     ColorAxisDemo: set padding
+
+changeset:   186:75b31b2beec6
+parent:      175:98ebcad2e1ca
+user:        objo
+date:        Sat Oct 26 20:36:30 2013 +0200
+summary:     MeshBuilder: corrected bug in Append(MeshGeometry3D) method (halfedge demo was not working)
+
+changeset:   185:514ade86abe6
+user:        objo <oystein.bjorke@gmail.com>
+date:        Wed Jan 08 08:39:01 2014 +0100
+summary:     Change version number to 2014.1
+
+changeset:   184:4dfa23137970
+user:        objo
+date:        Fri Dec 13 15:43:38 2013 +0100
+summary:     Add words to GhostDoc user dictionary
+
+changeset:   183:7bc92545333b
+user:        objo
+date:        Fri Dec 13 15:42:57 2013 +0100
+summary:     HelixViewport3D/CameraController: code cleanup
+
+changeset:   182:61e1f1fc5781
+user:        objo
+date:        Fri Dec 13 15:40:17 2013 +0100
+summary:     MeshBuilder: AddPyramid/AddOctahedron [issue:10006]
+
+changeset:   181:28f847c43c90
+user:        objo
+date:        Fri Dec 13 15:38:09 2013 +0100
+summary:     HelixViewport3D: add IsMoveEnabled property
+
+changeset:   180:f885ee4cad75
+user:        Jack Ukleja <jack@ukleja.com>
+date:        Wed Nov 27 15:55:58 2013 +1100
+summary:     Fix #10009 - ViewPort3DHelper.FindHits calculates wrong distance
+
+changeset:   179:e9f61daea5ad
+user:        objo
+date:        Wed Nov 20 09:08:03 2013 +0100
+summary:     BoundingBoxWireFrameVisual3D: BoundingBoxWireFrameVisual3D geometry update on
+
+changeset:   178:27536c46993c
+user:        objo
+date:        Tue Nov 19 14:37:03 2013 +0100
+summary:     MeshBuilder: AddPyramid [issue:10006]
+
+changeset:   177:e63b765cbb77
+user:        objo
+date:        Tue Nov 19 14:30:17 2013 +0100
+summary:     BillboardTtextGroupVisual3D: change Items property to IList [discussion:470437]
+
+changeset:   176:8e450ee5dbb1
+user:        objo
+date:        Fri Nov 01 14:44:20 2013 +0100
+summary:     Changed converter default results to UnsetValue
+
+changeset:   175:98ebcad2e1ca
+user:        objo
+date:        Thu Oct 10 13:05:21 2013 +0200
+summary:     Examples: added ViewMatrix demo (not finished)
+
+changeset:   174:f4dec6837c82
+user:        objo
+date:        Thu Oct 10 12:58:58 2013 +0200
+summary:     BillboardTextGroupVisual3D: added Offset property - rendered by a 'pin',
+
+changeset:   173:778313b77247
+user:        objo
+date:        Wed Oct 09 13:45:04 2013 +0200
+summary:     TextGroupVisual3D: corrected width measuring bug
+
+changeset:   172:0ff88a1d55cb
+user:        objo
+date:        Wed Oct 09 13:44:13 2013 +0200
+summary:     ViewCube: set e.Handled on handled events
+
+changeset:   171:6df59fd5099f
+user:        objo <oystein.bjorke@gmail.com>
+date:        Wed Sep 25 22:58:45 2013 +0200
+summary:     StudioReader: corrected bug introduced in previous changeset
+
+changeset:   170:84985069639f
+user:        objo
+date:        Wed Sep 25 20:59:17 2013 +0200
+summary:     Importers: support for freeze and creation on UI dispatcher [issue:9997]
+
+changeset:   169:4dec4c298bdb
+user:        objo
+date:        Wed Sep 25 20:57:43 2013 +0200
+summary:     Corrected spelling error
+
+changeset:   168:11095a0d601a
+user:        objo
+date:        Wed Sep 25 20:57:31 2013 +0200
+summary:     ExampleBrowser/CameraControl: Added Near/FarPlaneDistance to menu
+
+changeset:   167:06d30c06d48b
+user:        objo
+date:        Wed Sep 25 20:56:11 2013 +0200
+summary:     BillboardTextVisual3D: added MaterialType property [issue:10000]
+
+changeset:   166:f16790637b03
+user:        objo
+date:        Wed Sep 25 20:55:28 2013 +0200
+summary:     HelixViewport3D: do not copy near/far plane distances when toggling between
+
+changeset:   165:f5a96293a071
+user:        objo
+date:        Wed Sep 18 15:33:11 2013 +0200
+summary:     Removed debug messages
+
+changeset:   164:e76c01caa2a1
+parent:      163:b88d117fefa6
+parent:      162:e3497fe6dc8e
+user:        objo
+date:        Tue Sep 17 21:35:09 2013 +0200
+summary:     Merge
+
+changeset:   163:b88d117fefa6
+parent:      161:725a0293e347
+user:        objo
+date:        Tue Sep 17 00:16:10 2013 +0200
+summary:     ExtrudedVisual3D: removed obsolete property
+
+changeset:   162:e3497fe6dc8e
+user:        objo
+date:        Sat Sep 14 14:08:00 2013 +0200
+summary:     Manipulator: added Material and BackMaterial properties [discussion:456802]
+
+changeset:   161:725a0293e347
+user:        objo
+date:        Wed Sep 11 20:38:39 2013 +0200
+summary:     Changed attached property "Name" owner type to DependencyObject.
+
+changeset:   160:d3531a7969bf
+user:        objo
+date:        Sun Sep 08 09:37:15 2013 +0200
+summary:     Make pulled in code StyleCop compliant
+
+changeset:   159:70c3828a1ef5
+parent:      157:73fe167cf06e
+parent:      158:2c26d1a28c8b
+user:        objo
+date:        Sun Sep 08 09:32:02 2013 +0200
+summary:     Merge
+
+changeset:   158:2c26d1a28c8b
+parent:      151:051813c375a5
+user:        Brad Phelan <bradphelan@xtargets.com>
+date:        Tue Jul 09 15:22:30 2013 +0200
+summary:     Add angle sweeping and axis alignment
+
+changeset:   157:73fe167cf06e
+parent:      155:c422d14c8710
+parent:      156:6c0f412f7de5
+user:        objo
+date:        Sun Sep 08 09:27:35 2013 +0200
+summary:     Merge
+
+changeset:   156:6c0f412f7de5
+parent:      138:abdc8f243e6e
+user:        jesperll
+date:        Thu Apr 25 11:38:41 2013 +0200
+summary:     MeshBuilder: Make caches ThreadLocal to support multiple Dispatcher threads
+
+changeset:   155:c422d14c8710
+user:        objo
+date:        Sun Sep 08 09:19:41 2013 +0200
+summary:     StyleCop code cleanup
+
+changeset:   154:25ad965b4e7b
+user:        objo
+date:        Sun Sep 08 09:19:25 2013 +0200
+summary:     Added attached properties for names of Model3D and Visual3D [issue:9994]
+
+changeset:   153:3daf0e2ae644
+user:        objo
+date:        Thu Sep 05 08:10:10 2013 +0200
+summary:     Added *.GhostDoc.xml to .hgignore
+
+changeset:   152:561fd131a128
+user:        objo
+date:        Thu Sep 05 08:08:17 2013 +0200
+summary:     Corrected mesh cutting bug [issue:9990]
+
+changeset:   151:051813c375a5
+user:        objo
+date:        Thu Jun 20 07:18:37 2013 +0200
+summary:     Create a file ..\Output\changeset.id that contains the changeset ID.
+
+changeset:   150:46c3abb03f8c
+user:        objo
+date:        Thu Jun 20 06:40:36 2013 +0200
+summary:     Changed download release title
+
+changeset:   149:cd0b8cd35feb
+user:        objo
+date:        Wed Jun 19 21:30:16 2013 +0200
+summary:     ExtrudedVisual3D: changed Diameters property to DoubleCollection (breaking change!)
+
+changeset:   148:3d91ec198332
+user:        objo
+date:        Wed Jun 19 21:29:31 2013 +0200
+summary:     FileModelVisual3D: improved xml comments
+
+changeset:   147:5a847bb5f0fe
+user:        objo
+date:        Wed Jun 19 21:29:04 2013 +0200
+summary:     TubeVisual3D: corrected wrong diameter when using the Diameters property [issue:9988]
+
+changeset:   146:762ac1fa757c
+user:        objo
+date:        Fri Jun 07 11:36:15 2013 +0200
+summary:     Corrected HelixToolkit.Wpf.Tests namespace
+
+changeset:   145:d5f5cf3942a8
+user:        objo
+date:        Fri Jun 07 11:32:44 2013 +0200
+summary:     FileModelVisual3D: added DefaultMaterial property (Discussion 437477)
+
+changeset:   144:766d5214cc04
+user:        objo
+date:        Sat Jun 01 12:10:51 2013 +0200
+summary:     Replaced Rhino by Hippo
+
+changeset:   143:c76653d8c739
+user:        objo
+date:        Wed May 08 15:28:12 2013 +0200
+summary:     CuttingEarsTriangulator: fixed floating point precision error
+
+changeset:   142:cc75a1f4fefe
+user:        objo
+date:        Tue Apr 30 23:10:00 2013 +0200
+summary:     Discussion 440914: CuttingEarsTriangulator test
+
+changeset:   141:e4882190a2d6
+user:        objo
+date:        Tue Apr 30 19:19:19 2013 +0200
+summary:     Issue 9986: MeshBuilder.GetCircle - freeze point collection to make it thread
+
+changeset:   140:dbebb1d02ce5
+user:        objo
+date:        Sat Apr 27 07:24:15 2013 +0200
+summary:     Corrected compilation error (.NET 4.0 examples)
+
+changeset:   139:aa0685fe9b50
+user:        objo
+date:        Fri Apr 26 23:42:44 2013 +0200
+summary:     MeshElement3D: Added 'Visible' property
+
+changeset:   138:abdc8f243e6e
+user:        objo
+date:        Mon Apr 15 12:07:54 2013 +0200
+summary:     StLReader: Added DefaultMaterial and Header properties. Refactoring/stylecop
+
+changeset:   137:07a74f1fe190
+user:        objo
+date:        Tue Mar 12 11:38:01 2013 +0100
+summary:     TranslateManipulator: remove default value of the Direction property
+
+changeset:   136:feea67f0e04d
+user:        objo
+date:        Sat Feb 16 23:20:21 2013 +0100
+summary:     ExtrudedVisual3D: added missing geometry change notifications
+
+changeset:   135:8c0d58aa0295
+user:        objo
+date:        Tue Jan 22 12:05:35 2013 +0100
+summary:     MeshBuilder/MeshGeometryHelper: improved xml comments
+
+changeset:   134:d0e49372fbd0
+user:        objo
+date:        Tue Jan 22 12:05:05 2013 +0100
+summary:     Export example: corrected box dimensions
+
+changeset:   133:b1a7f07aec25
+user:        objo
+date:        Tue Jan 22 08:34:58 2013 +0100
+summary:     Corrected defect in MeshBuilder.AddQuad (issue 9974)
+
+changeset:   132:be8823d17d5e
+user:        objo
+date:        Tue Jan 22 08:32:39 2013 +0100
+summary:     Corrected bug in MeshGeometryHelper.FindBorderEdges (issue 9975)
+
+changeset:   131:b985505ecc7b
+user:        objo
+date:        Tue Jan 22 08:27:21 2013 +0100
+summary:     Changed .NET 4.0 projects to client profile
+
+changeset:   130:f98761f013f4
+user:        objo
+date:        Tue Jan 22 08:20:29 2013 +0100
+summary:     ScreenSpaceVisual3D: corrected Color bug (issue 9977)
+
+changeset:   129:92b94fdd25a9
+user:        objo
+date:        Thu Jan 17 22:58:40 2013 +0100
+summary:     ScreenSpaceVisual3D: freeze material when setting by Color
+
+changeset:   128:c37007c15518
+user:        objo
+date:        Mon Jan 14 14:33:10 2013 +0100
+summary:     HelixViewport3D: Added LookAtChanged and ZoomedByRectangle events
+
+changeset:   127:c08973d88e9f
+user:        objo
+date:        Mon Jan 14 12:43:15 2013 +0100
+summary:     Code cleanup
+
+changeset:   126:622714932d71
+user:        objo
+date:        Mon Jan 14 11:39:18 2013 +0100
+summary:     Corrected compiler warnings.
+
+changeset:   125:0d397ec356a3
+user:        objo
+date:        Mon Jan 14 11:32:49 2013 +0100
+summary:     Code cleanup
+
+changeset:   124:46d43844db3c
+user:        objo
+date:        Mon Jan 14 11:11:17 2013 +0100
+summary:     HelixViewport3D: Added IsInertiaEnabled property
+
+changeset:   123:804abbe392c3
+user:        objo
+date:        Sun Jan 13 22:51:31 2013 +0100
+summary:     Corrected compiler error for .net 4.0 example
+
+changeset:   122:7b9b7ea5b941
+user:        objo
+date:        Sun Jan 13 22:33:05 2013 +0100
+summary:     Added GlobalAssemblyInfo.cs - changed all projects to use this file.
+
+changeset:   121:291ae628a890
+user:        objo
+date:        Fri Dec 21 06:55:13 2012 +0100
+summary:     Examples/Background update: added one more test
+
+changeset:   120:3884ed8eb799
+user:        objo
+date:        Thu Dec 20 23:04:50 2012 +0100
+summary:     ExampleBrowser: added example that updates the 3D visual model in a
+
+changeset:   119:8342af1def3c
+user:        objo
+date:        Wed Dec 19 22:36:19 2012 +0100
+summary:     Kinect solution updated to VS 2012
+
+changeset:   118:2a111ce6c490
+user:        objo
+date:        Wed Dec 19 22:32:07 2012 +0100
+summary:     Text example: double sided text labels
+
+changeset:   117:7d20f6dcf2e1
+user:        objo
+date:        Wed Dec 19 22:31:55 2012 +0100
+summary:     Kinect/DepthSensorDemo: changed project to .NET 4.5
+
+changeset:   116:b4bd874e3a77
+user:        objo
+date:        Wed Dec 19 18:13:42 2012 +0100
+summary:     Improved text visuals (use TextGroupVisual3D when rendering many text labels).
+
+changeset:   115:9dd6e5c0f066
+user:        objo
+date:        Wed Dec 19 12:28:43 2012 +0100
+summary:     TextVisual3D - freeze bitmap
+
+changeset:   114:994b885d7434
+user:        objo
+date:        Tue Dec 18 13:03:14 2012 +0100
+summary:     TextVisual3D: added IsFlipped property
+
+changeset:   113:9cc89c317ff2
+user:        objo
+date:        Fri Dec 14 00:16:45 2012 +0100
+summary:     Unchecked folder namespace provider settings (resharper)
+
+changeset:   112:511fb984dcfd
+user:        objo
+date:        Fri Dec 14 00:15:23 2012 +0100
+summary:     StudioReader: support for duplicated material names
+
+changeset:   111:b88263969372
+user:        objo
+date:        Fri Dec 14 00:14:39 2012 +0100
+summary:     ColorAxis: removed duplicate properties (BorderBrush, Padding), code cleanup
+
+changeset:   110:75e410eda53b
+user:        objo
+date:        Fri Dec 14 00:13:57 2012 +0100
+summary:     BoundingSphere: added RayIntersection code
+
+changeset:   109:69bdeae15ffd
+user:        objo
+date:        Fri Dec 07 23:43:41 2012 +0100
+summary:     ExampleBrowser: corrected references in net 4.5 project
+
+changeset:   108:6cc6e5ea2838
+user:        objo
+date:        Fri Dec 07 22:26:35 2012 +0100
+summary:     ExampleBrowser: corrected net 4.0 project file
+
+changeset:   107:5a99934786cd
+parent:      103:dfeca140d5d0
+parent:      106:f733a28bcb74
+user:        objo
+date:        Fri Dec 07 22:15:32 2012 +0100
+summary:     Merge
+
+changeset:   106:f733a28bcb74
+user:        objo
+date:        Fri Dec 07 19:37:19 2012 +0100
+summary:     ColorAxis - added null checks
+
+changeset:   105:7973afe6023d
+user:        objo
+date:        Fri Dec 07 17:54:52 2012 +0100
+summary:     Added ColorAxis controls
+
+changeset:   104:0c7095a7b357
+parent:      101:7284bbeb6684
+user:        objo
+date:        Fri Dec 07 15:41:48 2012 +0100
+summary:     Improved TextVisual3D and TextBillboardVisual3D.
+
+changeset:   103:dfeca140d5d0
+user:        objo
+date:        Mon Nov 12 23:05:47 2012 +0100
+summary:     Examples: added an experimental DataTemplate example in the example browser
+
+changeset:   102:fc4915bd7713
+user:        objo
+date:        Mon Nov 12 23:04:10 2012 +0100
+summary:     EllipsoidVisual3D: corrected bug in dependency properties
+
+changeset:   101:7284bbeb6684
+user:        objo
+date:        Sun Oct 28 10:13:51 2012 +0100
+summary:     Updated NuGet packages, changed ExampleBrowser to AnyCPU in release configuration
+
+changeset:   100:cb7d26a82ddb
+user:        objo
+date:        Sun Oct 28 10:06:19 2012 +0100
+summary:     Removing files that were merged by a mistake (from https://hg.codeplex.com/forks/objo/sharpdx)
+
+changeset:   99:64c0525b2072
+user:        objo
+date:        Thu Oct 25 07:52:36 2012 +0200
+summary:     Viewport3DX: new property CoordinateSystemLabelForeground
+
+changeset:   98:b4f192c666bb
+parent:      97:ea9c0ca36245
+parent:      87:1c1165491ba0
+user:        objo
+date:        Thu Oct 25 07:48:07 2012 +0200
+summary:     Merge
+
+changeset:   97:ea9c0ca36245
+parent:      96:2f38d372e67d
+parent:      86:7beab3358086
+user:        objo
+date:        Thu Oct 25 07:22:47 2012 +0200
+summary:     Merge
+
+changeset:   96:2f38d372e67d
+user:        objo
+date:        Thu Oct 25 07:19:51 2012 +0200
+summary:     Mouse handling
+
+changeset:   95:8153e9c6694f
+user:        objo
+date:        Wed Oct 10 00:37:45 2012 +0200
+summary:     Changed signature of Element3D.Render method. Introduced "RenderContext"
+
+changeset:   94:5702405f5195
+user:        objo
+date:        Tue Oct 09 23:56:40 2012 +0200
+summary:     Changes from Przem
+
+changeset:   93:c21ae7ea3f7f
+user:        objo
+date:        Tue Oct 02 22:31:25 2012 +0200
+summary:     Corrected binding errors (changed base class to FrameworkElement)
+
+changeset:   92:a6c484611c59
+user:        objo
+date:        Tue Oct 02 22:21:58 2012 +0200
+summary:     Added app.config
+
+changeset:   91:b248b2b67dcd
+user:        objo
+date:        Tue Oct 02 08:42:02 2012 +0200
+summary:     Added filters to .hgignore
+
+changeset:   90:4786fc28209c
+user:        objo
+date:        Tue Oct 02 08:41:52 2012 +0200
+summary:     Upgraded to SharpDX 2.3.1
+
+changeset:   89:63961dbdf790
+user:        objo
+date:        Mon Oct 01 23:38:45 2012 +0200
+summary:     Added pepitaget task to example
+
+changeset:   88:a3e77040bf9c
+parent:      76:29db50621e34
+user:        objo
+date:        Mon Oct 01 23:20:58 2012 +0200
+summary:     First code (only showing a black screen) using DX10. No shaders. First try on a
+
+changeset:   87:1c1165491ba0
+user:        objo
+date:        Thu Oct 25 07:47:36 2012 +0200
+summary:     HelixViewport3D: added new properties:
+
+changeset:   86:7beab3358086
+user:        objo
+date:        Tue Oct 23 13:30:16 2012 +0200
+summary:     Corrected release build warnings.
+
+changeset:   85:88ed54d3b0a9
+user:        objo
+date:        Mon Oct 22 22:43:26 2012 +0200
+summary:     HelixViewport3D: coordinate system showing X, Y and Z labels
+
+changeset:   84:ae8db318e292
+user:        objo
+date:        Fri Oct 12 07:01:44 2012 +0200
+summary:     Changed license to MIT (GPL compatible)
+
+changeset:   83:64a12bf080c5
+user:        objo
+date:        Wed Oct 03 21:22:27 2012 +0200
+summary:     Increased timeout for codeplex release upload
+
+changeset:   82:7092d9ee1acf
+user:        objo
+date:        Wed Oct 03 20:11:03 2012 +0200
+summary:     Removed one more package...
+
+changeset:   81:8697ed803b26
+user:        objo
+date:        Wed Oct 03 20:09:40 2012 +0200
+summary:     Removed lib\ folders from new example projects.
+
+changeset:   80:58cd51d0cf25
+user:        dturvey_bhc
+date:        Wed Oct 03 14:40:46 2012 +0100
+summary:     Added Demo projects for bindable manipulators and for camera animation bug.
+
+changeset:   79:f64188593d59
+user:        dturvey_bhc
+date:        Wed Oct 03 14:36:09 2012 +0100
+summary:     Fixed bug in camera animation code.
+
+changeset:   78:cf73381f67c1
+user:        dturvey_bhc
+date:        Wed Oct 03 14:31:25 2012 +0100
+summary:     Added Bindable manipulators for translate and rotate
+
+changeset:   77:850a94feefae
+user:        dturvey_bhc
+date:        Wed Oct 03 14:30:09 2012 +0100
+summary:     Moved Pivot property to rotate manipulator subclass as it seems more appropriate
+
+changeset:   76:29db50621e34
+user:        objo
+date:        Wed Sep 05 23:09:30 2012 +0200
+summary:     Reverted test project output folder
+
+changeset:   75:c1b7e398ba22
+parent:      74:27199f9375c3
+parent:      72:5c1d41d2331c
+user:        objo
+date:        Wed Sep 05 23:00:29 2012 +0200
+summary:     Merge
+
+changeset:   74:27199f9375c3
+user:        objo
+date:        Wed Sep 05 22:39:39 2012 +0200
+summary:     Added .NET 4.5 build, upgraded example projects to .NET 4.5
+
+changeset:   73:7ec7b92d73a7
+parent:      64:b54d8f7cbb8c
+user:        objo
+date:        Wed Sep 05 22:07:28 2012 +0200
+summary:     Examples: Fixed bug in LegoVisual3D
+
+changeset:   72:5c1d41d2331c
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Thu Aug 30 21:59:51 2012 +0200
+summary:     NuGet pack script: set EnableNuGetPackageRestore=true
+
+changeset:   71:469425e4a8fc
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Thu Aug 30 21:42:25 2012 +0200
+summary:     Moved NuGet package assemblies from "lib" to "lib\NET40"
+
+changeset:   70:bb0ea57ca7da
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Thu Aug 30 20:49:18 2012 +0200
+summary:     Corrected NuGet push command
+
+changeset:   69:0bd34604ec67
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Thu Aug 30 06:32:31 2012 +0200
+summary:     Moved build scripts to Build and reorganized the Tools folder
+
+changeset:   68:7ce8604559ca
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Wed Aug 29 22:30:25 2012 +0200
+summary:     Added file header
+
+changeset:   67:42ae8cdb86a8
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Wed Aug 29 22:29:10 2012 +0200
+summary:     Renamed file names of generic classes
+
+changeset:   66:e8dfb70a4dc4
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Wed Aug 29 22:27:16 2012 +0200
+summary:     Renamed dog to moose :) (fixed example project)
+
+changeset:   65:dcbb7f39b789
+user:        objo@OSLWP7783.verit.dnv.com
+date:        Fri Aug 24 09:53:38 2012 +0200
+summary:     Renamed dog to moose :)
+
+changeset:   64:b54d8f7cbb8c
+user:        objo@OSLWP7783.verit.dnv.com
+date:        Tue Jun 26 10:02:28 2012 +0200
+summary:     Added XmlnsPrefix and XmlnsDefinition attributes to the assembly
+
+changeset:   63:64b26d9165a6
+user:        objo@OSLWP7783.verit.dnv.com
+date:        Tue Jun 26 09:59:09 2012 +0200
+summary:     HelixViewport3D: fixed bug when assigning to a non-empty ItemsSource
+
+changeset:   62:b022e94dc9fd
+user:        OBJO@OSLLP9329.verit.dnv.com
+date:        Fri Jun 15 07:34:03 2012 +0200
+summary:     MeshBuilder: corrected AddBox implementation (Issue 9956)
+
+changeset:   61:b5898cd4020c
+parent:      59:aa033a35fccd
+parent:      60:d969e7985b90
+user:        OBJO@OSLLP9329.verit.dnv.com
+date:        Sat Jun 09 22:44:03 2012 +0200
+summary:     Merge
+
+changeset:   60:d969e7985b90
+parent:      54:484483f000e1
+user:        OBJO@OSLLP9329.verit.dnv.com
+date:        Sat Jun 09 22:41:17 2012 +0200
+summary:     HelixViewport3D: added size and position properties for the coordinate system
+
+changeset:   59:aa033a35fccd
+user:        objo
+date:        Tue Jun 05 22:36:34 2012 +0200
+summary:     Automated codeplex release upload
+
+changeset:   58:2de01671b128
+user:        objo
+date:        Tue Jun 05 22:35:52 2012 +0200
+summary:     Examples: Changed platform targets to AnyCPU
+
+changeset:   57:406b2bf8d086
+user:        objo
+date:        Mon Jun 04 23:00:21 2012 +0200
+summary:     Issue 9950: added a BoundingBoxWireFrameVisual3D based on LinesVisual3D
+
+changeset:   56:da6f4f03a380
+user:        objo
+date:        Mon Jun 04 22:47:59 2012 +0200
+summary:     SimpleDemo: added a view-model (trying to still keep the example very simple)
+
+changeset:   55:1936750bb7aa
+user:        objo
+date:        Thu May 31 22:38:10 2012 +0200
+summary:     StudioReader: fixed bug when reading from stream (TexturePath undefined) [discussion:354077]
+
+changeset:   54:484483f000e1
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Sat May 12 11:55:34 2012 +0200
+summary:     Manipulators: code cleanup
+
+changeset:   53:75c3443a15fb
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Sat May 12 11:55:14 2012 +0200
+summary:     Changed CondeAnalysisRuleSet to AllRules
+
+changeset:   52:f4aede0e0dc1
+user:        objo
+date:        Fri May 11 00:33:10 2012 +0200
+summary:     CameraController: improved the WalkAround camera mode
+
+changeset:   51:09c4301a9da6
+user:        objo
+date:        Thu May 03 21:27:03 2012 +0200
+summary:     PenroseTriangleDemo: added keyboard shortcut "E" to export model
+
+changeset:   50:c2b5990c3e38
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Sat Apr 28 15:11:26 2012 +0200
+summary:     Corrected FxCop project file.
+
+changeset:   49:e0501ac81e2a
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Sat Apr 28 11:44:41 2012 +0200
+summary:     Code cleanup + corrected static code analysis warnings.
+
+changeset:   48:3041b80afc7c
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Sat Apr 28 11:29:27 2012 +0200
+summary:     Added FxCop project
+
+changeset:   47:07d4184089e4
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Sat Apr 28 11:28:58 2012 +0200
+summary:     ExampleBrowser: corrected TubeDemo bugs
+
+changeset:   46:420bfd0fec11
+user:        objo
+date:        Sat Apr 28 10:07:39 2012 +0200
+summary:     ExampleBrowser: added PenroseTriangleDemo
+
+changeset:   45:c33e747c6369
+user:        objo
+date:        Sat Apr 28 10:07:23 2012 +0200
+summary:     ContourDemo: corrected TubeVisual3D.Path to a Point3DCollection
+
+changeset:   44:f05bf2aa98af
+user:        objo
+date:        Sat Apr 28 10:06:08 2012 +0200
+summary:     HelixViewport3D: added EnableCurrentPosition property. Default value is false.
+
+changeset:   43:6457e990468d
+user:        objo
+date:        Sat Apr 28 10:05:00 2012 +0200
+summary:     SurfaceDemo: cleaned code
+
+changeset:   42:33b08e0453c8
+user:        objo
+date:        Sat Apr 28 10:04:24 2012 +0200
+summary:     ExtrudedVisual3D: changed Path property to Point3DCollection
+
+changeset:   41:70bd1a7d295a
+user:        objo
+date:        Sat Apr 28 10:03:28 2012 +0200
+summary:     Issue 9952:
+
+changeset:   40:1c5833c3f141
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Fri Apr 27 06:48:01 2012 +0200
+summary:     Viewport3DHelper: fixed LeftRightPanSensitivity, UpDownPanSensitivity and
+
+changeset:   39:dc812ad40b0e
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Thu Apr 26 21:21:21 2012 +0200
+summary:     Added more folders to .DotSettings file
+
+changeset:   38:0e8e99a2ca3c
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Thu Apr 26 21:20:50 2012 +0200
+summary:     improved xml comments
+
+changeset:   37:c61ecbfd91a0
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Thu Apr 26 21:20:15 2012 +0200
+summary:     .hgignore: added .nupkg and lib/
+
+changeset:   36:c89aec8343a0
+user:        objo
+date:        Thu Apr 26 21:11:48 2012 +0200
+summary:     Changed readme.txt
+
+changeset:   35:56d8241bb68a
+user:        objo
+date:        Thu Apr 26 20:58:09 2012 +0200
+summary:     HelixViewport3D/CameraController: added new properties for keyboard pan/rotate/zoom
+
+changeset:   34:0dbadeef6050
+user:        objo
+date:        Wed Apr 25 22:28:37 2012 +0200
+summary:     HelixViewport3D/CameraController: added TouchMode and IsTouchZoomEnabled properties.
+
+changeset:   33:b3cddd7915df
+user:        objo
+date:        Fri Apr 20 22:56:08 2012 +0200
+summary:     TextVisual3D: changed Direction to TextDirection, Up to UpDirection.
+
+changeset:   32:9155466b8be5
+user:        objo
+date:        Fri Apr 20 22:38:55 2012 +0200
+summary:     Added *.pdb and license.txt to the nuget package.
+
+changeset:   31:08cba4853e33
+user:        objo
+date:        Fri Apr 20 22:36:14 2012 +0200
+summary:     Corrected output path for the MemoryLeakTest project
+
+changeset:   30:205f0a5ffaa0
+user:        objo
+date:        Fri Apr 20 22:35:46 2012 +0200
+summary:     Refactoring of Examples - moved most examples into a common
+
+changeset:   29:2ad117fad9b4
+user:        objo
+date:        Fri Apr 20 22:27:23 2012 +0200
+summary:     ImageBrushExtension/ImageMaterialExtension/MaterialHelper:
+
+changeset:   28:3ba203a60fa0
+user:        objo
+date:        Fri Apr 20 22:25:01 2012 +0200
+summary:     Mesh3D: Added support for texture coordinates.
+
+changeset:   27:5a95ce1a6bee
+user:        objo
+date:        Wed Apr 18 22:50:30 2012 +0200
+summary:     Importers/StLReader: corrected bug when reading from stream (issue 9951)
+
+changeset:   26:638a2f488ba0
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Sat Apr 14 00:58:10 2012 +0200
+summary:     Added Resharper .DotSettings files
+
+changeset:   25:a12857cbefd8
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Sat Apr 14 00:57:49 2012 +0200
+summary:     Tests: Added ModelImporterTests
+
+changeset:   24:a5085160393d
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Sat Apr 14 00:53:06 2012 +0200
+summary:     MaterialHelper: corrected bug in ChangeOpacity
+
+changeset:   23:471a5f54ed34
+user:        objo
+date:        Mon Apr 09 21:56:17 2012 +0200
+summary:     Unit tests: Stylecop code cleanup.
+
+changeset:   22:220a38d11286
+user:        objo
+date:        Mon Apr 09 21:40:31 2012 +0200
+summary:     ObjReaderTests: corrected failing unit tests
+
+changeset:   21:3b577bf40eba
+user:        objo
+date:        Mon Apr 09 21:37:39 2012 +0200
+summary:     ObjReader: Support for multiple materials within the same group
+
+changeset:   20:c9fe709d363e
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Sun Apr 08 13:53:01 2012 +0200
+summary:     Examples/ModelViewer: fixed bug that caused files to be loaded twice
+
+changeset:   19:359de2511fec
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Sun Apr 08 13:52:15 2012 +0200
+summary:     Wpf.Tests: changed invalid obj test file, added three tests on smoothing group
+
+changeset:   18:7978acbdec36
+user:        objo@OSLLP9329.verit.dnv.com
+date:        Sun Apr 08 13:01:21 2012 +0200
+summary:     MeshBuilder: fixed bugs in the AddTriangles method
+
+changeset:   17:121f9ffb276e
+user:        objo
+date:        Sun Apr 08 01:07:45 2012 +0200
+summary:     ObjReader: Implemented support for smoothing groups
+
+changeset:   16:af6455b152e5
+user:        OBJO@OSLLP9329.verit.dnv.com
+date:        Fri Apr 06 16:14:57 2012 +0200
+summary:     Added kinect example (Examples\Kinect\DepthSensorDemo).
+
+changeset:   15:c92c49541029
+user:        objo
+date:        Thu Apr 05 23:13:15 2012 +0200
+summary:     ObjReader: fix ambient color bug
+
+changeset:   14:012233fd79d5
+user:        OBJO@OSLLP9329.verit.dnv.com
+date:        Thu Apr 05 10:56:24 2012 +0200
+summary:     MeshBuilder: added comments, fixed StyleCop violations.
+
+changeset:   13:70b995364608
+user:        OBJO@OSLLP9329.verit.dnv.com
+date:        Thu Apr 05 02:13:06 2012 +0200
+summary:     MeshBuilder: improved comments
+
+changeset:   12:1561306295c7
+user:        OBJO@OSLLP9329.verit.dnv.com
+date:        Tue Apr 03 01:15:48 2012 +0200
+summary:     HelixViewport3D: added alternative gesture properties for pan/zoom/rotate
+
+changeset:   11:7f19d2d20721
+user:        OBJO@OSLLP9329.verit.dnv.com
+date:        Fri Mar 30 20:43:29 2012 +0200
+summary:     Removed content files from nuget package
+
+changeset:   10:2e2c5aaa526c
+user:        objo
+date:        Sun Mar 11 20:47:41 2012 +0100
+summary:     Viewport3DHelper: minor change (using IsInstanceOfType instead of IsAssignableFrom)
+
+changeset:   9:f96d75e7d15a
+user:        objo
+date:        Sun Mar 11 20:33:59 2012 +0100
+summary:     ObjReader: corrected texture tilemode. added support for ambient texture maps.
+
+changeset:   8:1142ee740808
+user:        objo
+date:        Sun Mar 11 20:11:10 2012 +0100
+summary:     HelixViewport3D: removed unused assertion from OnApplyTemplate
+
+changeset:   7:aece4460dd71
+user:        objo
+date:        Sat Mar 10 17:23:16 2012 +0100
+summary:     ObjReader: setting ViewportUnits = absolute for the textures
+
+changeset:   6:a79030ea7c0e
+user:        objo
+date:        Sat Mar 10 16:54:24 2012 +0100
+summary:     HelixViewport3D: removed Add, Remove and ClearChildren methods.
+
+changeset:   5:bcfdd8aed594
+user:        objo
+date:        Sat Mar 10 16:33:10 2012 +0100
+summary:     ExtrudedVisual3D: corrected bug in initialization of the Points property
+
+changeset:   4:ac6c93683bb4
+user:        objo
+date:        Sat Mar 10 16:31:54 2012 +0100
+summary:     LinesVisual3D/PointsVisual3D: corrected bug in initialization of the Points property
+
+changeset:   3:c213bd42d8f7
+user:        objo
+date:        Sat Mar 10 15:55:58 2012 +0100
+summary:     ZoomHandler: corrected bug for Orthographic cameras (clamping delta value to -0.5)
+
+changeset:   2:e4335c890064
+user:        objo
+date:        Sat Mar 10 15:54:41 2012 +0100
+summary:     CameraControlDemo: corrected CameraRotationMode/CameraMode binding bugs
+
+changeset:   1:d9d74495a5f0
+user:        objo
+date:        Sat Mar 10 15:36:21 2012 +0100
+summary:     Added .hgignore
+
+changeset:   0:d9129cb73b86
+user:        OBJO@OSLLP9329.verit.dnv.com
+date:        Mon Mar 05 19:35:18 2012 +0100
+summary:     Changed to Mercurial.
+
