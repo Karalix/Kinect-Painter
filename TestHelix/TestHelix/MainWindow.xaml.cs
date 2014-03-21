@@ -22,6 +22,7 @@ namespace TestHelix
 {
     public partial class MainWindow : Window
     {
+        
         LinesVisual3D lignes = new LinesVisual3D();
         PointsVisual3D tmpPoints;
         LinesVisual3D tmpArrete;
@@ -328,10 +329,13 @@ namespace TestHelix
                 if (s != null)
                 {
                     Joint main = s.Joints[JointType.HandRight];
-                    Point3D newP = new Point3D(main.Position.X, main.Position.Y, main.Position.Z);
+                    Point3D point = new Point3D(main.Position.X, main.Position.Y, main.Position.Z);
+                   
+                    MeshBuilder mesh = new MeshBuilder(true, true);
+
+                    mesh.AddBox(point, 1, 1, 1);
                     
-                    
-            }
+                }
         }
 
 
