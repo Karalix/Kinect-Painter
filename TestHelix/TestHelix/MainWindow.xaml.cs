@@ -35,10 +35,10 @@ namespace TestHelix
         Boolean focusSquelette;
 
         Point3DCollection bufSkel = new Point3DCollection();
-        /*
+        
         Point3DCollection bufPoint = new Point3DCollection();
         Point3DCollection bufArrete = new Point3DCollection();
-        */
+        
         private KinectSensor kinect = null;
         private Timer timer = new Timer();
         private Skeleton[] players = new Skeleton[2];
@@ -256,6 +256,9 @@ namespace TestHelix
                 tmpPoints.Color = Brushes.Orange.Color;
                 tmpPoints.Size = 0.05;
 
+                bufArrete = new Point3DCollection();
+                bufPoint = new Point3DCollection();
+
                 listePoints.Add(tmpPoints);
                 listeLignes.Add(tmpArrete);
 
@@ -282,18 +285,30 @@ namespace TestHelix
                     
                     if( tmpPoints.Points.Count > 0)
                     {
-                        tmpArrete.Points.Add(tmpPoints.Points.Last());
-                        tmpArrete.Points.Add(newP);
+                        bufArrete.Add(tmpPoints.Points.Last());
+                        bufArrete.Add(newP);
                     }
-                    tmpPoints.Points.Add(newP);
+                    bufPoint.Add(newP);
+                    
+
+                    tmpPoints.Points = bufPoint;
+                    tmpArrete.Points = bufArrete;
+                    
                 }
             
         }
 
         private void ClearSpace(object sender, RoutedEventArgs e)
         {
-            listeLignes.Clear();
-            listePoints.Clear();
+            foreach (LinesVisual3D lv in listeLignes)
+            {
+                lv.Points.Clear();
+            }
+
+            foreach (PointsVisual3D lp in listePoints)
+            {
+                lp.Points.Clear();
+            }
         }
 
         //changer la couleur des points et arretes
