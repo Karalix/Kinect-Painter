@@ -32,6 +32,8 @@ namespace TestHelix
 
         MeshVisual3D mv = new MeshVisual3D();
 
+        Skeleton squelette;
+
         Squelette2PerspectiveCameraConverter squelette2CameraConverter;
         Boolean focusSquelette;
 
@@ -63,6 +65,9 @@ namespace TestHelix
 
             squelette2CameraConverter = new Squelette2PerspectiveCameraConverter();
             focusSquelette = false;
+
+
+            timer.Interval = 41;
 
             initKinect();
         }
@@ -182,9 +187,19 @@ namespace TestHelix
 
                     bufSkel.Clear();
 
-                    foreach (
-                        Skeleton squelette in
-                            squelettes.Where(skel => skel.TrackingState == SkeletonTrackingState.Tracked))
+                    if (skeletonFrame.SkeletonArrayLength == 0)
+                        return;
+
+                    var trackedSquelettes = squelettes.Where(skel => skel.TrackingState == SkeletonTrackingState.Tracked).OrderBy<Skeleton, float>(skel => skel.Position.Z);
+
+                    if (trackedSquelettes.Count() == 0)
+                    {
+                        return;
+                    }
+
+                    squelette = trackedSquelettes.First();
+
+                    if (squelette != null)
                     {
                         players[i] = squelette;
                         drawBone(squelette, JointType.Head, JointType.ShoulderCenter, colorSkel);
@@ -274,7 +289,6 @@ namespace TestHelix
                 nbTraits.Content = "Nombre de traits : " + listeLignes.Count;
 
                 timer.Tick += new EventHandler(drawPoints);
-                timer.Interval = 41;
                 timer.Start();
             }
 
@@ -295,6 +309,7 @@ namespace TestHelix
                         bufArrete.Add(tmpPoints.Points.Last());
                         bufArrete.Add(newP);
                     }
+
                     bufPoint.Add(newP);
                     
 
@@ -345,7 +360,8 @@ namespace TestHelix
          */
         private void buildCube(object sender, RoutedEventArgs e)
         {
-            Skeleton s = players[0];
+            Skeleton s = squelette;
+
                 if (s != null)
                 {
                     Joint main = s.Joints[JointType.HandRight];
@@ -426,7 +442,7 @@ namespace TestHelix
             colorSkel = Brushes.Red;
             ChangeBackColor();
             timer.Stop();
-            timer.Interval = 750;
+            timer.Interval = 500;
             timer.Start();
 
         }
